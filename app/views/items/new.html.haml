@@ -1,0 +1,133 @@
+.contents
+  .contents__top
+  .contents__header
+    .header--box
+    .header--logo
+      = image_tag src="/assets/14309.gif", width:"260", height:"130",class: "logo-pte"
+      %p.logo-name Rider’s Garage
+      %p.logo-text フリマアプリ&サイト Rider’s Garage[ライダースーガレッジ]
+    .header--search
+      .search-box
+        = form_with(url: "#", local: true, method: :get, class: "search-form") do |f|
+          = f.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
+          %label{for: "search-icon", class: "search-label"}
+            %i.fas.fa-search
+          .search-icon
+            = f.submit "検索", class: "search-btn", id: "search-icon"
+      -# .login
+      -#   - if user_signed_in?
+      -#     = image_tag src="/assets/vitnvimdinvdnckv.jpg", width:"350", height:"80", class: "content-box__left--down--path--picture25"
+      -#     = link_to '書き込む', class: "content-box__left--down--path--letter"
+      -#   - else
+      -#     %h1 書き込むにはログインお願いします！
+  .contents__body
+    .contents__body__side
+      .contents__body__side--1
+        %p.mypage マイページメニュー
+        .box
+          %p.box__letter お知らせ
+        .box
+          %p.box__letter いいねした商品
+      .contents__body__side--2
+        %p.mypage 商品を出品する
+        .box
+          %p.box__letter 商品を出品する
+        .box
+          %p.box__letter 出品した商品
+        .box
+          %p.box__letter 自分のショップを見る
+      .contents__body__side--3
+        %p.mypage 商品を購入する
+        .box
+          %p.box__letter 購入した商品
+        .box
+          %p.box__letter 最近見た商品
+        .box
+          %p.box__letter コメントした商品
+      .contents__body__side--4
+        %p.mypage 設定・ヘルプ・その他
+        .box
+          %p.box__letter 売上・ポイント管理
+        .box
+          %p.box__letter 設定
+        .box
+          %p.box__letter お問い合わせ
+
+
+    .contents__body__input-list
+      = form_with(model: @item, url: items_path, local: true, class: "contents__body__input-list__form") do |f|
+        -# .input-list__images
+        -#   #image-box
+        -#     #image-box-1
+        -#       .item-num-0#image-box__container
+        -#         -# %label{for: "item_images_attributes_0_item_image"}
+        -#         %i.fas.fa-camera#image-box-icon
+        -#     #image-box-2
+        -#       = f.fields_for :images do |i|
+        -#         .input-field__contents{"data-index" => "#{i.index}"}
+        -#           = i.file_field :item_image, type: 'file'
+
+        .input-list__image
+          .input-list__image-1#image-boxer
+            %label{for: "file-sample"}
+              %i.fas.fa-camera#image-icon
+              = f.fields_for :images do |i|
+                .input-field
+                  = i.file_field :item_image, type: 'file', id: "file-sample"
+          .input-list__image-1
+            %i.fas.fa-camera#image-icon
+          .input-list__image-1
+            %i.fas.fa-camera#image-icon
+          .input-list__image-1
+            %i.fas.fa-camera#image-icon
+
+        .product-name
+          %p.letter--1 商品名
+          %p.letter--2 ※必須
+          = f.text_field :name, placeholder: "商品名（必須 40文字まで)", class: "form--text"
+        
+        .introduction
+          %p.introduction--letter1 商品説明
+          %p.introduction--letter2 ※必須
+          = f.text_area :introduction, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）", class: "introduction__form-area"
+        .form-separator
+        
+        .status
+          %p.letter--1 商品の状態
+          %p.letter--2 ※必須
+          = f.collection_select :status_id, Status.all, :id, :name
+        .form-separator
+        
+        .delivery
+          %p.letter--1 配送料の負担
+          %p.letter--2 ※必須
+          = f.collection_select :delivery_fee_id, DeliveryFee.all, :id, :name
+
+        .shipping
+          %p.letter--1 発送日の目安
+          %p.letter--2 ※必須
+          = f.collection_select :shipping_date_id, ShippingDate.all, :id, :name
+
+        .prefecture
+          %p.letter--1 発送元の地域
+          %p.letter--2 ※必須
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+        .form-separator
+
+        .price
+          %p.letter--1 商品価格
+          %p.letter--2 ※必須
+          = f.number_field :price, min:300, max:9999999, id: "price_calc", placeholder: "¥300 ~ ¥9999999", value: ""
+        .price__charge
+          .price__charge--box
+          .price__charge--tax 販売手数料（10%）
+          %span.price__charge--line{ id: 'sell-main__fee' } ー
+        %hr{:color => "#F5F5F5", class:"contents__input-list__form__price__sale__horizontal"}
+        .price__profit
+          .price__profit--box
+          .price__profit--tax 販売利益
+          %span.price__profit--line{ id: 'sell-main__profit' } ー
+
+        .form-post
+          = f.submit "確認する", class: "form-post--send"
+        
