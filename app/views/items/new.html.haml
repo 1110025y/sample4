@@ -1,5 +1,4 @@
 .contents
-  .contents__top
   = render "header-top"
   .contents__body
     .contents__body__side
@@ -33,7 +32,7 @@
         .box
           %p.box__letter 設定
         .box
-          %p.box__letter お問い合わせ
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "box__letter"
 
 
     .contents__body__input-list

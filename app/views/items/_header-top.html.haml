@@ -1,8 +1,13 @@
+.contents__top
+  .top-title
+    %p Rider’s Garage
+  .top-text 
+    %p アプリをダウンロードして、バイクパーツ・ウェアを売買しよう。
 .contents__header
   .header--box
   .header--logo
     = link_to root_path, class: "logo-link" do
-      = image_tag src="/assets/14309.gif", width:"330", height:"130",class: "logo-pte"
+      = image_tag src="/assets/14309.gif", width:"360", height:"180",class: "logo-pte"
       %p.logo-name Rider’s Garage
       %p.logo-text フリマアプリ&サイト Rider’s Garage[ライダースーガレッジ]
   .header--search
@@ -13,9 +18,20 @@
           %i.fas.fa-search
         .search-icon
           = f.submit "検索", class: "search-btn", id: "search-icon"
-    -# .login
-    -#   - if user_signed_in?
-    -#     = image_tag src="/assets/vitnvimdinvdnckv.jpg", width:"350", height:"80", class: "content-box__left--down--path--picture25"
-    -#     = link_to '書き込む', class: "content-box__left--down--path--letter"
-    -#   - else
-    -#     %h1 書き込むにはログインお願いします！
+    .login
+      - if user_signed_in?
+        .adjustment-box
+        .bottom-box_notice
+          %a{:href => "#", class: "bottom-btn"}
+            %i.far.fa-bell#bell
+          = link_to "お知らせ", "#", class: "bottom-box_notice--btn", id: "search"
+        .bottom-box_my-page
+          %a{:href => "#", class: "bottom-btn"}
+            %i.far.fa-grin-squint#squint
+          = link_to "マイページ", "#", class: "bottom-box_my-page--btn"
+      - else
+        .adjustment-box
+        .bottom-box_registration
+          = link_to "無料会員登録", new_user_registration_path, method: :get, class: "bottom-box_registration--btn"
+        = link_to "ログイン", user_session_path, method: :post, class: "bottom-box_login"
+        
