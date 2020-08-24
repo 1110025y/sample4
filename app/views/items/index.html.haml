@@ -1,3 +1,26 @@
 .contents
-  .contents__top
-  .contents__header
+  = render "header-top"
+  .contents-body-index
+    .body-index
+      .body-index--box#slide
+        %img{:src => "/assets/d18b0b470e4.jpg", width:"1800", height:"387"}/
+        %img{:src => "/assets/big_main.jpg", width:"1800", height:"387"}/
+        %img{:src => "/assets/shopimg-1.jpg", width:"1800", height:"387"}/
+    .body-message
+      .message__box
+        .message__box--from
+        .message__box--text
+          %p.text-mag バイクパーツ・ウェアを売買できるフリマアプリ
+          %p.text-mag1 Rider’s Garageならスマホで写真を撮ってすぐ出品！
+          %p.text-mag2 毎日格安商品を見つけよう！アプリをDLしよう！
+          .icons
+            .apple-icon
+              %a{:href => "https://itunes.apple.com/jp/app/instagram/id389801252?mt=8"}
+                %img{:alt => "AppStoreで入手", :height => "50", :src => "https://linkmaker.itunes.apple.com/assets/shared/badges/ja-jp/appstore-lrg.svg"}/
+            .google-icon
+              %img{:src => "/assets/google-play-badge.png", width:"200", height:"75"}/
+      .message-image
+        %img{:src => "/assets/smartphone_img01.jpg", width:"400", height:"275", class: "message-image--pic"}/
+
+.btn
+  = render "posts-btn"
