@@ -1,25 +1,6 @@
 .contents
   .contents__top
-  .contents__header
-    .header--box
-    .header--logo
-      = image_tag src="/assets/14309.gif", width:"260", height:"130",class: "logo-pte"
-      %p.logo-name Rider’s Garage
-      %p.logo-text フリマアプリ&サイト Rider’s Garage[ライダースーガレッジ]
-    .header--search
-      .search-box
-        = form_with(url: "#", local: true, method: :get, class: "search-form") do |f|
-          = f.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
-          %label{for: "search-icon", class: "search-label"}
-            %i.fas.fa-search
-          .search-icon
-            = f.submit "検索", class: "search-btn", id: "search-icon"
-      -# .login
-      -#   - if user_signed_in?
-      -#     = image_tag src="/assets/vitnvimdinvdnckv.jpg", width:"350", height:"80", class: "content-box__left--down--path--picture25"
-      -#     = link_to '書き込む', class: "content-box__left--down--path--letter"
-      -#   - else
-      -#     %h1 書き込むにはログインお願いします！
+  = render "header-top"
   .contents__body
     .contents__body__side
       .contents__body__side--1
@@ -31,7 +12,8 @@
       .contents__body__side--2
         %p.mypage 商品を出品する
         .box
-          %p.box__letter 商品を出品する
+          = link_to new_item_path do
+            %p.box__letter 商品を出品する
         .box
           %p.box__letter 出品した商品
         .box

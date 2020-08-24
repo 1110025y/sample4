@@ -1,3 +1,21 @@
-.contents
-  .contents__top
-  .contents__header
+.contents__header
+  .header--box
+  .header--logo
+    = link_to root_path, class: "logo-link" do
+      = image_tag src="/assets/14309.gif", width:"330", height:"130",class: "logo-pte"
+      %p.logo-name Rider’s Garage
+      %p.logo-text フリマアプリ&サイト Rider’s Garage[ライダースーガレッジ]
+  .header--search
+    .search-box
+      = form_with(url: "#", local: true, method: :get, class: "search-form") do |f|
+        = f.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
+        %label{for: "search-icon", class: "search-label"}
+          %i.fas.fa-search
+        .search-icon
+          = f.submit "検索", class: "search-btn", id: "search-icon"
+    -# .login
+    -#   - if user_signed_in?
+    -#     = image_tag src="/assets/vitnvimdinvdnckv.jpg", width:"350", height:"80", class: "content-box__left--down--path--picture25"
+    -#     = link_to '書き込む', class: "content-box__left--down--path--letter"
+    -#   - else
+    -#     %h1 書き込むにはログインお願いします！
