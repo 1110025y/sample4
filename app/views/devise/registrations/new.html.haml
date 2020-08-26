@@ -67,6 +67,9 @@
                 = f.text_field :first_name_kana, placeholder: "例)たろう", class: 'kanaForm'
             
       .registrations-.actions
+        = flash[:recaptcha_error]
+        = recaptcha_tags
         = f.submit "登録", class: 'sbtForm'
-        %a.backBtn{:href => "/items"} トップページに戻る
+        %a.backBtn{:href => "/users/new"} もどる
+        %a.top-backBtn{:href => "/items"} トップページに戻る
 

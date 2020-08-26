@@ -251,8 +251,8 @@
     }
   }
   .registrations-.actions{
-    width: 30%;
-    height: 150px;
+    width: 40%;
+    height: 280px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
@@ -260,12 +260,31 @@
       width: 220px;
       height: 40px;
       padding-right: 10px;
+      margin: 10px 0 0 40px;
     }
     .backBtn{
       display: block;
       text-decoration: none;
       color: #0000CC;
-      margin: 10px 0 0 35px;
+      margin: 10px 0 0 125px;
+    }
+    .top-backBtn{
+      display: block;
+      text-decoration: none;
+      color: #0000CC;
+      margin: 5px 0 0 85px;
+    }
+    .backBtn:hover{
+      opacity: 0.5 ;
+      color: #EEEEEE;
+    }
+    .backBtn:hover{
+      opacity: 0.5 ;
+      color: #DC143C;
+    }
+    .top-backBtn:hover{
+      opacity: 0.9 ;
+      color: #DC143C;
     }
   }
 }
