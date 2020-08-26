@@ -66,8 +66,7 @@
                 = f.label :（名）, class: 'kanaLabel'
                 = f.text_field :first_name_kana, placeholder: "例)たろう", class: 'kanaForm'
             
-      .registrations-.actions
-        = flash[:recaptcha_error]
+      .registrations-actions
         = recaptcha_tags
         = f.submit "登録", class: 'sbtForm'
         %a.backBtn{:href => "/users/new"} もどる

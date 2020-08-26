@@ -210,7 +210,6 @@
         width: 100%;
         height: 160px;
         display: flex;
-        border-bottom: 2px solid #999999;
         &--kanaTitle{
           width: 30%;
           height: 160px;
@@ -250,7 +249,7 @@
       }
     }
   }
-  .registrations-.actions{
+  .registrations-actions{
     width: 40%;
     height: 280px;
     margin-left: auto;
@@ -261,6 +260,10 @@
       height: 40px;
       padding-right: 10px;
       margin: 10px 0 0 40px;
+      background-color: #EE0000;
+      color: #FFF;
+      border-radius: 5px 5px 5px 5px / 5px 5px 5px 5px;
+      border: 1px solid #DDDDDD;
     }
     .backBtn{
       display: block;

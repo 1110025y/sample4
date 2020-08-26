@@ -37,30 +37,40 @@
 
     .contents__body__input-list
       = form_with(model: @item, url: items_path, local: true, class: "contents__body__input-list__form") do |f|
-        -# .input-list__images
-        -#   #image-box
-        -#     #image-box-1
-        -#       .item-num-0#image-box__container
-        -#         -# %label{for: "item_images_attributes_0_item_image"}
-        -#         %i.fas.fa-camera#image-box-icon
-        -#     #image-box-2
-        -#       = f.fields_for :images do |i|
-        -#         .input-field__contents{"data-index" => "#{i.index}"}
-        -#           = i.file_field :item_image, type: 'file'
 
         .input-list__image
-          .input-list__image-1#image-boxer
-            %label{for: "file-sample"}
-              %i.fas.fa-camera#image-icon
+          .input-list_images
+            .input-list__image-1#image-boxer
+              %label{for: "file-sample"}
+                %i.fas.fa-camera#image-icon
+            .input-list__image-2
               = f.fields_for :images do |i|
-                .input-field
+                .input-field{"data-index" => "#{i.index}"}
                   = i.file_field :item_image, type: 'file', id: "file-sample"
-          .input-list__image-1
-            %i.fas.fa-camera#image-icon
-          .input-list__image-1
-            %i.fas.fa-camera#image-icon
-          .input-list__image-1
-            %i.fas.fa-camera#image-icon
+          .input-list_images
+            .input-list__image-1#image-boxer1
+              %label{for: "file-sample1"}
+                %i.fas.fa-camera#image-icon
+            .input-list__image-2
+              = f.fields_for :images do |i|
+                .input-field{"data-index" => "#{i.index}"}
+                  = i.file_field :item_image, type: 'file', id: "file-sample1"
+          .input-list_images
+            .input-list__image-1#image-boxer2
+              %label{for: "file-sample2"}
+                %i.fas.fa-camera#image-icon
+            .input-list__image-2
+              = f.fields_for :images do |i|
+                .input-field{"data-index" => "#{i.index}"}
+                  = i.file_field :item_image, type: 'file', id: "file-sample2"
+          .input-list_images
+            .input-list__image-1#image-boxer3
+              %label{for: "file-sample3"}
+                %i.fas.fa-camera#image-icon
+            .input-list__image-2
+              = f.fields_for :images do |i|
+                .input-field{"data-index" => "#{i.index}"}
+                  = i.file_field :item_image, type: 'file', id: "file-sample3"
 
         .product-name
           %p.letter--1 商品名

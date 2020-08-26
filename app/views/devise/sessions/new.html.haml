@@ -1,17 +1,37 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.contents_sessions
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .sessions-header
+      = link_to root_path, class: "logo-link" do
+        = image_tag src="/assets/14309.gif", width:"280", height:"130",class: "logo-pte"
+        %p.logo-name Rider’s Garage
+        %p.logo-text フリマアプリ&サイト
+    .sessions-box
+      .sessions-box--icon
+        %p.icon-mge 連携済みアカウントでログイン
+        .icon-box
+          = link_to "#", class: "btn" do
+            = icon('fab', 'google', class: "icon-G")
+          = link_to "#", class: "btn" do
+            = icon('fab', 'facebook-square', class: "icon-F")
+          = link_to "#", class: "btn" do
+            = icon('fab', 'apple', class: "icon-A")
+          = link_to "#", class: "btn" do
+            = icon('fab', 'twitter', class: "icon-T")
+        .icon-text
+          .se ---------------------------------
+          %p.text もしくは
+          .se ---------------------------------
+      .sessions-box--form
+        %p.form-mge メールアドレスでログイン
+        .field-form
+          = f.email_field :email, autofocus: true, autocomplete: "email",class: "form-mail", placeholder: "メールアドレス"
+          = f.password_field :password, autocomplete: "current-password",class: "form-pass", placeholder: "パスワード"
+        - if devise_mapping.rememberable?
+          .field
+            = f.check_box :remember_me
+            = f.label :remember_me
+        .sessions-recaptcha
+          = recaptcha_tags
+        .sessions-actions
+          = f.submit "ログイン",class: "sbtForm"
+          %a.top-backBtn{:href => "/items"} トップページに戻る
