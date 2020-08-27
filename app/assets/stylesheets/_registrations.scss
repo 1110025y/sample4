@@ -1,0 +1,293 @@
+* {
+  box-sizing: border-box;
+}
+
+.contents{
+  height: 100%;
+  width: 100vw;
+  background-color: #FFFFFF;
+  &__registrations{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    .registrations-title{
+      width: 95%;
+      height: 40px;
+      margin: 40px 0 0 0;
+      border: 1px solid #DDDDDD;
+      border-bottom: double;
+      border-color:#DDDDDD;
+      background: -moz-linear-gradient(top, #CCCCCC, #FFF);
+      background: -webkit-linear-gradient(top, #CCCCCC, #FFF);
+      background: linear-gradient(to bottom, #CCCCCC, #FFF);
+      font-weight: bold;
+      padding: 7px 0 0 20px;
+    }
+    .registrations-text{
+      width: 95%;
+      height: 30px;
+      display: flex;
+      margin-top: 50px;
+      #fa-dot-circle{
+        color: #CC0000;
+        margin-top: 4px;
+      }
+      .text-ltc{
+        font-weight: bold;
+        font-family: "メイリオ";
+        margin-left: 5px;
+      }
+    }
+    .registrations-fromBox{
+      width: 95%;
+      height: 80%;
+      border: 2px solid #999999;
+      .fromBox{
+        width: 100%;
+        height: 100%;
+        .field-n{
+          width: 100%;
+          height: 160px;
+          display: flex;
+          border-bottom: 2px solid #999999;
+          &--nameTitle{
+            width: 30%;
+            height: 160px;
+            border-right: 1px solid #DDDDDD;
+            font-weight: bold;
+            color: #777777;
+            .fields{
+              width: 253px;
+              height: 158px;
+              background-color: #eeeeee;
+              padding: 10px;
+              .Required{
+                color: #DD0000;
+                margin-left: 90px;
+              }
+            }
+          }
+          &--nameForm{
+            width: 70%;
+            height: 160px;
+            padding: 15px 0 0 10px;
+            .nameForm-mge{
+              font-size: 13px;
+            }
+            .nameForm{
+              width: 400px;
+              margin-top: 10px;
+            }
+          }
+        }
+        .field-e{
+          width: 100%;
+          height: 160px;
+          display: flex;
+          border-bottom: 2px solid #999999;
+          &--emailTitle{
+            width: 30%;
+            height: 160px;
+            border-right: 1px solid #DDDDDD;
+            font-weight: bold;
+            color: #777777;
+            .fields{
+              width: 253px;
+              height: 158px;
+              background-color: #eeeeee;
+              padding: 10px;
+              .Required{
+                color: #DD0000;
+                margin-left: 78px;
+              }
+            }
+          }
+          &--emailForm{
+            width: 70%;
+            height: 160px;
+            padding: 15px 0 0 10px;
+            .emailForm-mge{
+              font-size: 13px;
+            }
+            .emailForm{
+              width: 400px;
+              margin-top: 10px;
+            }
+          }
+        }
+        .field-p{
+          width: 100%;
+          height: 160px;
+          display: flex;
+          &--passTitle{
+            width: 30%;
+            height: 160px;
+            border-right: 1px solid #DDDDDD;
+            font-weight: bold;
+            color: #777777;
+            .fields{
+              width: 253px;
+              height: 160px;
+              background-color: #eeeeee;
+              padding: 10px;
+              .Required{
+                color: #DD0000;
+                margin-left: 110px;
+              }
+            }
+          }
+          &--passForm{
+            width: 70%;
+            height: 150px;
+            padding: 15px 0 0 10px;
+            .Form-mge{
+              font-size: 13px;
+            }
+            .passForm-mge{
+              font-size: 13px;
+              margin-top: 15px;
+            }
+            .new-pass-Form{
+              width: 400px;
+              margin-top: 10px;
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+  .registrations-fromBoxes{
+    width: 95%;
+    height: 80%;
+    border: 2px solid #999999;
+    .fromBoxes{
+      width: 100%;
+      height: 100%;
+      .field-ff{
+        width: 100%;
+        height: 160px;
+        display: flex;
+        border-bottom: 2px solid #999999;
+        &--ffTitle{
+          width: 30%;
+          height: 160px;
+          border-right: 1px solid #DDDDDD;
+          font-weight: bold;
+          color: #777777;
+          .fields{
+            width: 253px;
+            height: 158px;
+            background-color: #eeeeee;
+            padding: 10px;
+            .Required{
+              color: #DD0000;
+              margin-left: 160px;
+            }
+          }
+        }
+        &--ffForm{
+          width: 60%;
+          height: 48px;
+          padding: 15px 0 0 15px;
+          .ffForm-mge{
+            font-size: 13px;
+            padding-left: 10px;
+          }
+          .ffForm-box{
+            display: flex;
+            margin-top: 10px;
+            .ffLabel{
+              margin-top: 5px;
+            }
+            .ffForm{
+              width: 400px;
+            }
+          }
+        }
+      }
+      .field-kana{
+        width: 100%;
+        height: 160px;
+        display: flex;
+        &--kanaTitle{
+          width: 30%;
+          height: 160px;
+          border-right: 1px solid #DDDDDD;
+          font-weight: bold;
+          color: #777777;
+          .fields{
+            width: 253px;
+            height: 158px;
+            background-color: #eeeeee;
+            padding: 10px;
+            .Required{
+              color: #DD0000;
+              margin-left: 60px;
+            }
+          }
+        }
+        &--kanaForm{
+          width: 60%;
+          height: 48px;
+          padding: 15px 0 0 15px;
+          .kanaForm-mge{
+            font-size: 13px;
+            padding-left: 10px;
+          }
+          .kanaForm-box{
+            display: flex;
+            margin-top: 10px;
+            .kanaLabel{
+              margin-top: 5px;
+            }
+            .kanaForm{
+              width: 400px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .registrations-actions{
+    width: 40%;
+    height: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    .sbtForm{
+      width: 220px;
+      height: 40px;
+      padding-right: 10px;
+      margin: 10px 0 0 40px;
+      background-color: #EE0000;
+      color: #FFF;
+      border-radius: 5px 5px 5px 5px / 5px 5px 5px 5px;
+      border: 1px solid #DDDDDD;
+    }
+    .backBtn{
+      display: block;
+      text-decoration: none;
+      color: #0000CC;
+      margin: 10px 0 0 125px;
+    }
+    .top-backBtn{
+      display: block;
+      text-decoration: none;
+      color: #0000CC;
+      margin: 5px 0 0 85px;
+    }
+    .backBtn:hover{
+      opacity: 0.5 ;
+      color: #EEEEEE;
+    }
+    .backBtn:hover{
+      opacity: 0.5 ;
+      color: #DC143C;
+    }
+    .top-backBtn:hover{
+      opacity: 0.9 ;
+      color: #DC143C;
+    }
+  }
+}

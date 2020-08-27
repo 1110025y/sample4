@@ -1,0 +1,35 @@
+.contents
+  .contents__top
+    .top-title
+      %p Rider’s Garage
+    .top-text 
+  .contents-middle
+    %p.middle-text 新規会員登録
+    .middle-separator
+  .contents-box
+    .contents-header
+      .contents-header--box
+      .contents-header--logo
+        = link_to root_path, class: "contents-header--logo--link" do
+          = image_tag src="/assets/14309.gif", width:"400", height:"220",class: "logo-pte"
+          %p.logo-name Rider’s Garage
+          %p.logo-text フリマアプリ&サイト<br>Rider’s Garage[ライダースーガレッジ]
+      .contents-header--section
+        .section--box
+          %p.section-text-a お持ちのメールアドレスで登録
+          = link_to new_user_registration_path, class: "btn-mail" do
+            = icon('far', 'envelope', class: "icon")
+            メールアドレスで登録する
+          %p.section-text-b SNSアカウントで登録/お持ちのアカウントで登録
+          = link_to "#", class: "btn-GG" do
+            = icon('fab', 'google', class: "icon")
+            Googleで登録する
+          = link_to "#", class: "btn-FB" do
+            = icon('fab', 'facebook-square', class: "icon")
+            Facebookで登録する
+          = link_to "#", class: "btn-Ap" do
+            = icon('fab', 'apple', class: "icon")
+            Appleで登録する
+          %a.top-backBtn{:href => "/items"} トップページに戻る
+          .Text
+            登録することで、利用規約とプライバシーポリシーに同意したものとみなされます。
