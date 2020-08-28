@@ -2,12 +2,17 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.includes(:images).order('created_at DESC') #トップページに表示、更新した順番で
+    @parents = Category.where(ancestry: nil)
   end
 
   def new
     @item = Item.new
     @item.images.new
 
+  end
+
+
+  def category
   end
 
   def create
@@ -40,11 +45,6 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
-  def purchase
-  end
-
-  def test
-  end
 
   private
 
