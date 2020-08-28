@@ -102,61 +102,116 @@ Rails 6.0.3.2
 <br>
 <br>
 
-# DB設計
-
+# DB設計 fleamarket_sample_79f
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false|
-|password|string|null: false|
 |nickname|string|null: false|
-### Association
-- has_many :tweets
-- has_many :comments
-- has_one :message, dependent: :destroy
-<br>
+|email|string|null: false, unique:true|
+|password|string|null: false|
+|password_confirmation|string||
 
-## tweetsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image|text||
-|text|text||
-|user_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- has_many :comments
-<br>
-
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|tweet_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :tweet
-- belongs_to :user
-<br>
-
-## messagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|first_name|string|null: false|
+|first＿name|string|null: false|
 |family_name|string|null: false|
-|first_name_kana|string|null: false|
+|first＿name_kana|string|null: false|
 |family_name_kana|string|null: false|
-|introduction|text|null: false|
-|hobby|string|null: false|
-|skill|string|null: false|
-|likes|string|null: false|
-|user|references|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-<br>
 
-## blogsテーブル
+### Association
+- has_many: items
+
+
+
+## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|content|text|null: false|
-|title|integer|null: false|
-|start_time|datetime|null: false|
+|user|references|null: false, foreign_key: true|
+|name|string|null: false|
+|price|integer|null: false|
+|introduction|text|null: false|
+|status_id|integer|null: false||
+|prefecture_id|integer|null: false|
+|delivery_fee_id|string|null: false||
+|shipping_date_id|string|null: false|
+|category|references|null: false, foreign_key: true|
+|seller|references|null: false, foreign_key: true|
+|buyer|references|foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :category
+
+- belongs_to :seller, class_name: "User"
+- belongs_to :buyer, class_name: "User"
+
+- belongs_to_active_hash :shipping_date
+- belongs_to_active_hash :prefecture
+- belongs_to_active_hash :delivery_fee
+- belongs_to_active_hash :status
+
+- has_many :images
+- accepts_nested_attributes_for :images, allow_destroy: true
+- has_many :images, dependent: :destroy
+
+
+
+
+# categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|ancestry|string|null: false|
+|name|string|null: false|
+
+### Association
+- has_many: items
+
+
+
+
+# imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item|references|null: false, foreign_key: true|
+|item_image|string|null: false|
+
+### Association
+- belongs_to : item
+
+
+
+# shippingdatesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- has_many: items
+
+
+
+# delivery_feesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- has_many: items
+
+
+
+# statusesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- has_many: items
+
+
+
+# prefecturesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- has_many: items
