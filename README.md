@@ -104,7 +104,7 @@ Rails 6.0.3.2
 <br>
 <br>
 
-# DB設計 fleamarket_sample_79f
+# DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
