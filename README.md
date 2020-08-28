@@ -36,15 +36,14 @@ FacebookやTwitterのアカウントからログイン出来る機能や、<br>
 
 # Demo
 ![Shimokita.php](https://i.gyazo.com/94df8b1a299ba3bfb1fc46617b4ef156.gif)
-![Shimokita.php]()
-![Shimokita.php]()
+![Shimokita.php](https://i.gyazo.com/27fe61a6bb37d122851686d3a107eb4b.gif)
 <br>
 <br>
 <br>
 
 # Usage
 ```
-$ git clone https://github.com/1110025y/anime.git
+$ git clone https://github.com/1110025y/sample4.git
 ```
 
 <br>
@@ -54,12 +53,12 @@ $ git clone https://github.com/1110025y/anime.git
 # Downloading and installing steps
 1. Clone this repository
 ```
-$ git clone https://github.com/1110025y/anime.git
+$ git clone https://github.com/1110025y/sample4.git
 ```
 
 2. Go into the repository
 ```
-$ cd coffee-time
+$ cd sample4
 ```
 
 3. Install dependencies
