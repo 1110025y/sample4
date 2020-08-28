@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 「アプリ名：Rider’s Garage」
+このツールは、バイクパーツ・ウェアを売買できるフリマアプリ。<br>
+![Shimokita.php](https://i.gyazo.com/18f8ab17dbdf1311194687f313c945ba.jpg)
+<br>
+<br>
+<br>
