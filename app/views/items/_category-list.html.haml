@@ -1,6 +1,6 @@
 .categories
   .categories--contents
-    %p カテゴリ一覧
+    .categories--title カテゴリから探す
     %ul.category__parent
       - @parents.each do |parent|
         .category-box{id: "parent_category#{parent.id}"}

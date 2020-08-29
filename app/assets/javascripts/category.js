@@ -99,10 +99,6 @@ $(document).on('turbolinks:load', function(){
 
 
 
-
-
-
-
   $(function(){
     $('#parent_category1').click(function(){
       $("#parent_list1").slideToggle('1000');
