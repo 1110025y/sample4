@@ -46,6 +46,7 @@ $(document).on('turbolinks:load', function(){
       }
       reader.readAsDataURL(file);
     });
+
     // アップロードするファイルを選択
     $('#file-sample2').change(function() {
       var file = $(this).prop('files')[0];
@@ -68,6 +69,7 @@ $(document).on('turbolinks:load', function(){
       }
       reader.readAsDataURL(file);
     });
+    
     // アップロードするファイルを選択
     $('#file-sample3').change(function() {
       var file = $(this).prop('files')[0];

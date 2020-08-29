@@ -2,12 +2,29 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.includes(:images).order('created_at DESC') #トップページに表示、更新した順番で
+    @parents = Category.where(ancestry: nil)
   end
 
   def new
     @item = Item.new
     @item.images.new
 
+    #セレクトボックスの初期値設定
+    @category_parent_array = ["---"]
+    #データベースから、親カテゴリーのみ抽出し、配列化
+    @category_parent_array = Category.where(ancestry: nil)
+
+  end
+
+  # 以下全て、formatはjsonのみ
+  # 親カテゴリーが選択された後に動くアクション
+  def get_category_children
+    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
+    @category_children = Category.find(params[:parent_id]).children
+  end
+
+
+  def category
   end
 
   def create
@@ -18,6 +35,9 @@ class ItemsController < ApplicationController
       render :new
     end
   end
+
+  
+
 
   def edit
     @item = Item.find(params[:id])
@@ -40,11 +60,6 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
-  def purchase
-  end
-
-  def test
-  end
 
   private
 
