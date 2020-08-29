@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root to: 'items#index'
   resources :items do
     collection do
+      get 'category/get_category_children', to: 'items#get_category_children', defaults: { format: 'json' }
       get 'category'
     end
   end

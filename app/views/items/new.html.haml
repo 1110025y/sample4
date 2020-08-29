@@ -87,6 +87,12 @@
           %p.letter--1 商品の状態
           %p.letter--2 ※必須
           = f.collection_select :status_id, Status.all, :id, :name
+        
+        .category
+          %p.letter--1 商品カテゴリ
+          %p.letter--2 ※必須
+          .category_choose
+            = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
         .form-separator
         
         .delivery
