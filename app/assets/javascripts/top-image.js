@@ -42,5 +42,23 @@ $(document).on('turbolinks:load', function(){
     /*オプションを足す場合はここへ記載*/
     
   });
+
+
+  
+  $(function() {
+    //マウスを乗せたら発動
+    $('.itemsNew__content__box--details').hover(function() {
+      var index = $(this).data('index');
+      //マウスを乗せたら色が変わる
+      $(`.itemsNew__content__box--details[data-index="${index}"]`).css('opacity', '0');
+
+    //ここにはマウスを離したときの動作を記述
+    }, function() {
+  
+      //色指定を空欄にすれば元の色に戻る
+      $('.itemsNew__content__box--details').css('opacity', '0.7');
+    });
+  });
+
 });
 

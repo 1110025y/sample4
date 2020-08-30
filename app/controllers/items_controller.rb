@@ -36,13 +36,15 @@ class ItemsController < ApplicationController
     end
   end
 
-  
-
-
   def edit
     @item = Item.find(params[:id])
     @item.edit
     redirect_to root_path
+  end
+
+
+  def show
+    @item = Item.find(params[:id])
   end
 
   def update
@@ -64,7 +66,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :prefecture_id, :shipping_date_id , :delivery_fee_id, :status_id, :introduction, :brand, images_attributes: [:item_image, :_destroy, :id])
+    params.require(:item).permit(:name, :price, :prefecture_id, :category_id, :shipping_date_id , :delivery_fee_id, :status_id, :introduction, :brand, images_attributes: [:item_image, :_destroy, :id])
   end
   
 end
