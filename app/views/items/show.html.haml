@@ -1,5 +1,68 @@
 .contents
   = render "header-top"
-  .contents-body-index
+  .contents-body-show
+    .body-showTop
+      %ul.lists
+        %li.showList
+          = link_to "Rider’s Garage", root_path, class: "showList--link"
+        %i.fas.fa-greater-than
+        %li.showList
+          = link_to "#" , class: "showList--link" do
+            = @category.parent.name
+        %i.fas.fa-greater-than
+        %li.showList
+          = link_to "#" , class: "showList--link" do
+            = @category.name
+        %i.fas.fa-greater-than
+        %li.showList
+          = @item.name
+    .body-showMde
+      .showMde--left
+        .itemImage--main
+          - @item.images.each_with_index do |image, index|
+            - if image.persisted?
+              = image_tag image.item_image.url, :width =>'500px', :height =>'540px'
+            - else
+      .showMde--right
+        %h1.item-name
+          = @item.name
+        .item-brand Tommy Hilfiger
+        .item-box
+          .item-price
+            = "¥#{@item.price}"
+          .item-fee
+            = @item.delivery_fee.name
+        %a{:href => "#", class: "buy-btn--link"}
+          .buy-btn
+            %i.fas.fa-shopping-cart
+            %p.btn-text 購入する
+        .item-introduction
+          %p.itemExplanation 商品説明
+        .item-contents
+          = @item.introduction
+        .item-list
+          .separator
+            %span ブランド
+            %span.info Tommy Hilfiger
+          .separator
+            %span カテゴリ
+            %span.info 
+              = @category.name
+          .separator
+            %span 商品の状態
+            %span.info 
+              = @item.status.name
+          .separator
+            %span 配送料
+            %span.info 
+              = @item.delivery_fee.name
+          .separator
+            %span 発送元の地域
+            %span.info 
+              = @item.prefecture.name
+          .separator
+            %span 発送日の目安
+            %span.info 
+              = @item.shipping_date.name
   .footer
     = render "footer-bottom"

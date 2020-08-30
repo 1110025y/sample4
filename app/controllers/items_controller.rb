@@ -45,6 +45,9 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @parents = Category.where(ancestry: nil)
+    @category = Category.find(@item.category_id)
+    # @user = User.find(@item.user_id)
   end
 
   def update
