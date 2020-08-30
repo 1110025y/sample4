@@ -2,7 +2,7 @@
 .btn {
   .posts-btn {
     width: 140px;
-    background: #FF0033;
+    background: #FF4F02;
     text-align: center;
     border-radius: 20%;
     bottom: 32px;
@@ -105,3 +105,62 @@
   }
 }
 
+.contents-items{
+  width: 70%;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  .items-separator{
+    border-bottom: 1px solid #FF0000;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .itemsNew{
+    display: flex;
+    width: 100%;
+    &__content{
+      width: 230px;
+      height: 245px;
+      margin: 40px 40px 10px 0;
+      position: relative;
+      border: 1px solid #EEEEEE;
+      &__box{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        &--image{
+          width: 225px;
+          height: 245px;
+          
+        }
+        &--details{
+          width: 225px;
+          height: 80px;
+          position: absolute;
+          top: 1px;
+          padding: 5px 0 0 5px;
+          .itemsNew-link{
+            text-decoration: none;
+            .hidden_field{
+              width: 225px;
+              height: 80px;
+              opacity: 0.7;
+              background-color: #FFF;
+              font-weight: bold;
+              .iName{
+                font-size: 20px;
+                color: #444444;
+              }
+              .iPrice{
+                font-size: 17px;
+                color: #444444;
+                margin-top: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

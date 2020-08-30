@@ -1,0 +1,183 @@
+.footer-top{
+  width: 100;
+  height: 530px;
+  background-color: #F5F5F5;
+  margin-top: 120px;
+  .text-mge{
+    color: #000;
+    font-size: 30px;
+    padding: 40px 0 0 25%;
+    margin-bottom: 10px;
+  }
+  .footer-separator{
+    border-bottom: 1px solid #FF0000;
+    width: 30%;
+    margin: 10px 0 20px 24%;
+  }
+  .FeatureBox{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    .Feature1{
+      width: 17%;
+      margin: 10px 0 0 23%;
+      position: relative;
+      .Feature1-a{
+        display: flex;
+        z-index: 3;
+        position: relative;
+        margin-left: 15px;
+        &--box{
+          width: 50px;
+          height: 70px;
+          font-size: 50px;
+          opacity: 0.6;
+        }
+        &--boxes{
+          width: 150px;
+          height: 70px;
+          padding-left: 10px;
+          &--text{
+            font-size: 15px;
+            font-weight: bold;
+            opacity: 0.6;
+          }
+          &--texts{
+            font-size: 27px;
+            font-weight: bold;
+            opacity: 0.8;
+            color: red;
+          }
+        }
+      }
+      .Feature1-b{
+        height: 200px;
+        .Feature1-b--image{
+          border-radius: 160px 160px 160px 160px / 160px 160px 160px 160px;
+          position: absolute;
+          z-index: 1;
+          top: 20px;
+        }
+      }
+      .Feature1-c{
+        margin-left: 10px;
+      }
+    }
+    .Feature2{
+      width: 17%;
+      margin: 10px 0 0 40px;
+      position: relative;
+      .Feature2-a{
+        display: flex;
+        z-index: 3;
+        position: relative;
+        margin-left: 15px;
+        &--box{
+          width: 50px;
+          height: 70px;
+          font-size: 50px;
+          opacity: 0.6;
+        }
+        &--boxes{
+          width: 150px;
+          height: 70px;
+          padding-left: 10px;
+          &--text{
+            font-size: 15px;
+            font-weight: bold;
+            opacity: 0.6;
+          }
+          &--texts{
+            font-size: 27px;
+            font-weight: bold;
+            color: white;
+            // text-shadow: 0 0 2px #ccc, 0 0 3px #FFF, 0 0 3px #FFF;
+          }
+        }
+      }
+      .Feature2-b{
+        height: 200px;
+        .Feature2-b--image{
+          border-radius: 160px 160px 160px 160px / 160px 160px 160px 160px;
+          position: absolute;
+          z-index: 1;
+          top: 20px;
+        }
+      }
+      .Feature2-c{
+        margin-left: 60px;
+      }
+    }
+    .Feature3{
+      width: 28%;
+      margin: 10px 0 0 40px;
+      position: relative;
+      .Feature3-a{
+        display: flex;
+        z-index: 3;
+        position: relative;
+        margin-left: 15px;
+        &--box{
+          width: 50px;
+          height: 70px;
+          font-size: 50px;
+          opacity: 0.6;
+        }
+        &--boxes{
+          width: 150px;
+          height: 70px;
+          padding-left: 10px;
+          &--text{
+            font-size: 27px;
+            font-weight: bold;
+            opacity: 0.6;
+          }
+          &--texts{
+            font-size: 15px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 0 2px #000, 0 0 1px #000, 0 0 1px #000;
+          }
+        }
+      }
+      .Feature3-b{
+        height: 200px;
+        .Feature3-b--image{
+          border-radius: 160px 160px 160px 160px / 160px 160px 160px 160px;
+          position: absolute;
+          z-index: 1;
+          top: 20px;
+        }
+      }
+      .Feature3-c{
+        margin-left: 25px;
+      }
+    }
+  }
+}
+.footer-bottom{
+  width: 100%;
+  height: 60px;
+  background-color: #EE0000;
+  padding-top: 15px;
+  font-size: 15px;
+  .listTerms{
+    display: flex;
+    margin-left: 31%;
+    &__rules{
+      list-style: none;
+      &--links{
+        text-decoration: none;
+        color: #000;
+        
+      }
+      &--link{
+        text-decoration: none;
+        border-left: 1px solid #FFF;
+        color: #000;
+        margin-left: 30px;
+        padding-left: 30px;
+      }
+    }
+  }
+}

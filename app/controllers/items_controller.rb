@@ -36,13 +36,15 @@ class ItemsController < ApplicationController
     end
   end
 
-  
-
-
   def edit
     @item = Item.find(params[:id])
     @item.edit
     redirect_to root_path
+  end
+
+
+  def show
+    @item = Item.find(params[:id])
   end
 
   def update
