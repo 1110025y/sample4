@@ -75,12 +75,24 @@
       .body-showUnder
         %p.showUnder-text この商品について質問
         .underBar
+        .comment-list
+          - if @comments
+            - @comments.each do |comment|
+              .comments
+                %p
+                  = comment.user.nickname
+                  %span ：
+                  = comment.text
         .comment-box
-          = form_with(class: "comment-box--form", local: true) do |f|
-            -# = f.text_area :, placeholder: "質問を入力する", class: "comment-box--area"
+          %i.fas.fa-exclamation-triangle
+          %span.caution 直接取引や個人情報のやり取りは禁止しております。
+          = form_with(model: [@item, @comment], class: "comment-box--form", local: true) do |f|
+            = f.text_area :text, placeholder: "質問を入力する", class: "comment-area"
             - if user_signed_in?
-              = f.submit "質問する", class: "comment-box--send"
+              = f.submit "質問する", class: "comment-send"
             - else
-              = link_to "ログイン", user_session_path, method: :post, class: "bottom-box_login"
+              %p.login-caution ※ログインすると質問できるようになります。
+              = link_to "ログイン", user_session_path, method: :post, class: "comment-box_login"
+        %a.backBtn{:href => "/items"} トップページに戻る
   .footer
     = render "footer-bottom"
