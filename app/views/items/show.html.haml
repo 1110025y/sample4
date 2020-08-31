@@ -17,52 +17,70 @@
         %li.showList
           = @item.name
     .body-showMde
-      .showMde--left
-        .itemImage--main
-          - @item.images.each_with_index do |image, index|
-            - if image.persisted?
-              = image_tag image.item_image.url, :width =>'500px', :height =>'540px'
-            - else
-      .showMde--right
-        %h1.item-name
-          = @item.name
-        .item-brand Tommy Hilfiger
-        .item-box
-          .item-price
-            = "¥#{@item.price}"
-          .item-fee
-            = @item.delivery_fee.name
-        %a{:href => "#", class: "buy-btn--link"}
-          .buy-btn
-            %i.fas.fa-shopping-cart
-            %p.btn-text 購入する
-        .item-introduction
-          %p.itemExplanation 商品説明
-        .item-contents
-          = @item.introduction
-        .item-list
-          .separator
-            %span ブランド
-            %span.info Tommy Hilfiger
-          .separator
-            %span カテゴリ
-            %span.info 
-              = @category.name
-          .separator
-            %span 商品の状態
-            %span.info 
-              = @item.status.name
-          .separator
-            %span 配送料
-            %span.info 
+      .showMde--box
+        .showMde--left
+          .itemImage--main
+            - @item.images.each_with_index do |image, index|
+              - if image.persisted?
+                = image_tag image.item_image.url, :width =>'500px', :height =>'540px'
+              - else
+        .showMde--right
+          %h1.item-name
+            = @item.name
+          .item-brand
+            = @item.brand
+          .item-box
+            .item-price
+              = "¥#{@item.price}"
+            .item-fee
               = @item.delivery_fee.name
-          .separator
-            %span 発送元の地域
+          %a{:href => "#", class: "buy-btn--link"}
+            .buy-btn
+              %i.fas.fa-shopping-cart
+              %p.btn-text 購入する
+          .item-introduction
+            %p.itemExplanation 商品説明
+          .item-contents
+            = @item.introduction
+          .item-list
+            .separator
+              %span ブランド
+              %span.info
+                = @item.brand
+            .separator
+              %span カテゴリ
+              %span.info 
+                = @category.name
+            .separator
+              %span 商品の状態
+              %span.info 
+                = @item.status.name
+            .separator
+              %span 配送料
+              %span.info 
+                = @item.delivery_fee.name
+            .separator
+              %span 発送元の地域
+              %span.info 
+                = @item.prefecture.name
+            .separator-last
+              %span 発送日の目安
+              %span.info 
+                = @item.shipping_date.name
+          .exhibitor-name
+            %i.far.fa-grin-squint
+            %span 出品者
             %span.info 
-              = @item.prefecture.name
-          .separator
-            %span 発送日の目安
-            %span.info 
-              = @item.shipping_date.name
+              = @user.nickname
+      .body-showUnder
+        %p.showUnder-text この商品について質問
+        .underBar
+        .comment-box
+          = form_with(class: "comment-box--form", local: true) do |f|
+            -# = f.text_area :, placeholder: "質問を入力する", class: "comment-box--area"
+            - if user_signed_in?
+              = f.submit "質問する", class: "comment-box--send"
+            - else
+              = link_to "ログイン", user_session_path, method: :post, class: "bottom-box_login"
   .footer
     = render "footer-bottom"

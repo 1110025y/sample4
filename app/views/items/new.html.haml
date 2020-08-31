@@ -88,6 +88,11 @@
           %p.letter--2 ※必須
           = f.collection_select :status_id, Status.all, :id, :name
         
+        .brand
+          %p.letter--1 ブランド名
+          %p.letter--3 ※任意
+          = f.text_field :brand, placeholder: "例)シャネル", class: "brand--text"
+
         .category
           %p.letter--1 商品カテゴリ
           %p.letter--2 ※必須
