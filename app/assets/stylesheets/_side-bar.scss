@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .contents{
   height: 100%;
   width: 100vw;
@@ -45,12 +49,25 @@
           height: 60px;
           background-color: white;
           border: 1px solid #DDDDDD;
+          &__exhibit{
+            text-decoration: none;
+            &__letter{
+              font-size: 15px;
+              padding-left: 13px;
+              padding-top: 4px;
+              color: #555555;
+            }
+          }
           &__letter{
             font-size: 15px;
             padding-left: 13px;
             padding-top: 4px;
             color: #555555;
           }
+        }
+        .box__exhibit__letter:hover{
+          opacity: 0.6;
+          color: #FF0000;
         }
       }
       &--3{
@@ -93,6 +110,18 @@
             padding-top: 4px;
             color: #555555;
           }
+          &__logout{
+            font-size: 15px;
+            padding-left: 13px;
+            padding-top: 4px;
+            color: #555555;
+            text-decoration: none;
+            display: block;
+          }
+        }
+        .box__logout:hover{
+          opacity: 0.6;
+          color: #FF0000;
         }
       }
     }

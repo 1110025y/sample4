@@ -11,5 +11,10 @@ Rails.application.routes.draw do
       get 'category'
     end
   end
-  resources :users
+  resources :users do
+    member do
+      get 'exhibitedShow'
+    end
+  end
+
 end

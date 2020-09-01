@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.contents__box{
+  height: 130px;
+  background-color: #F5F5F5;
+}
+
+
+
+
+// exhibitedShowのscss
+.exhibited-list{
+  width: 60%;
+  height: 100%;
+  padding-top: 30px;
+  .exhibitedText{
+    font-size: 19px;
+    font-weight: bold;
+    opacity: 0.7;
+    margin: 0 0 20px 7px;
+  }
+  .exhibitedHeading{
+    width: 80%;
+    height: 40px;
+    background-color: #eeeeee;
+    border: 1px solid #cccccc;
+    &--title{
+      font-size: 15px;
+      font-weight: bold;
+      color: #333333;
+      opacity: 0.7;
+      padding: 6px 0 0 10px;
+    }
+  }
+  .exhibitedGoods{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #FFF;
+    border: 1px solid #cccccc;
+    &__box{
+      width: 215px;
+      height: 310px;
+      margin: 30px 0 20px 50px;
+      border: 1px solid #EEEEEE;
+      padding: 1px;
+      border-radius: 5px 5px 5px 5px / 5px 5px 5px 5px;
+      .exhibitedGoods--image{
+        border: 1px solid #EEEEEE;
+      }
+      .exhibitedGoods--link{
+        text-decoration: none;
+        .iName{
+          color: #222222;
+        }
+        .iPrice{
+          color: #222222;
+          font-weight: bold;
+        }
+      }
+      .link-btn1{
+        text-decoration: none;
+        color: #808080;
+      }
+      .link-btn2{
+        text-decoration: none;
+        color: #808080;
+      }
+      .exhibitedGoods--image:hover{
+        opacity: 0.6;
+        color: #cccccc;
+      }
+      .link-btn1:hover{
+        opacity: 0.6;
+        color: #0000FF;
+      }
+      .link-btn2:hover{
+        opacity: 0.6;
+        color: #EE0000;
+      }
+    }
+  }
+}

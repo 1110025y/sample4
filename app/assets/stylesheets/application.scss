@@ -1,13 +1,19 @@
 @import "reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
 @import "items.new";
 @import "items.index";
-@import "header-top";
+@import "item.show";
+
 @import "user.new";
+@import "user.show";
+
 @import "registrations";
 @import "sessions";
-@import "categories";
+
+
+@import "header-top";
 @import "footer-top";
-@import "item.show";
 @import "side-bar";
+@import "categories";

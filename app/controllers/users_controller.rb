@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
   
-  def index
-  end
 
   def new
   end
@@ -19,6 +17,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: current_user.id)
+    @items = Item.all
+  end
+
+  def exhibitedShow
     @items = Item.all
   end
 

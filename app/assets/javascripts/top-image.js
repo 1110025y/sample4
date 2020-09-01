@@ -29,7 +29,7 @@ $(document).on('turbolinks:load', function(){
                             page ++;
                             changePage();
               };
-        },8000);
+        },9000);
     }
     //（７）～秒間隔でイメージ切換の停止設定
     function stopTimer(){

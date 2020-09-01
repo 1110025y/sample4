@@ -1,0 +1,29 @@
+.contents
+  = render "header-top"
+  .contents__body
+    = render "side-bar"
+    .exhibited-list
+      %p.exhibitedText 出品した商品
+      .exhibitedHeading
+        %p.exhibitedHeading--title 出品した商品一覧
+      .exhibitedGoods
+        - @items.each do |item,i|
+          - if item.user_id == current_user.id
+            - if item.images.present?
+              .exhibitedGoods__box
+                .exhibitedGoods--image
+                  %a{:href => item_path(item.id)}
+                    = image_tag (item.images[0].item_image.url), size: "205x230"
+                .exhibitedGoods--details{"data-index" => "#{i}"}
+                  %a{:href => item_path(item.id), class: "exhibitedGoods--link"}
+                    .text_field
+                      .iName
+                        = "#{item.name}"
+                      .iPrice
+                        = "¥#{item.price}"
+                  .btn-field
+                    = link_to "編集", "#", class: "link-btn1", data: {"turbolinks" => false}
+                    = link_to '削除', "#", class: "link-btn2", method: :delete
+  .contents__box
+  .footer
+  = render "footer-bottom"
