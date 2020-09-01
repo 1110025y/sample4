@@ -28,7 +28,7 @@
         .bottom-box_my-page
           %a{:href => "#", class: "bottom-btn"}
             %i.far.fa-grin-squint#squint
-          = link_to "マイページ", "#", class: "bottom-box_my-page--btn"
+          = link_to "マイページ", user_path(:id), class: "bottom-box_my-page--btn"
       - else
         .adjustment-box
         .bottom-box_registration
