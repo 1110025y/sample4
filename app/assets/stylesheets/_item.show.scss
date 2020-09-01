@@ -48,6 +48,15 @@
           height: 550px;
           border: 1px solid #EEEEEE;
         }
+        .itemImage--sub{
+          display: flex;
+        }
+        .itemSub-images{
+          margin: 10px 0 0 10px;
+        }
+        .image__list:hover{
+          border: 2px solid #FF66FF;
+        }
       }
       .showMde--right{
         width: 50%;

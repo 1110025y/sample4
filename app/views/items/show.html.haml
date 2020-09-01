@@ -21,9 +21,15 @@
         .showMde--left
           .itemImage--main
             - @item.images.each_with_index do |image, index|
-              - if image.persisted?
-                = image_tag image.item_image.url, :width =>'500px', :height =>'540px'
+              - if index == 0
+                .itemMain-images{"data-index" => "#{index}"}
+                  = image_tag image.item_image.url, :width =>'500px', :height =>'540px', class: "main__image"
               - else
+          .itemImage--sub
+            - @item.images.each_with_index do |image, index|
+              - if image.persisted?
+                .itemSub-images{"data-index" => "#{index}"}
+                  = image_tag image.item_image.url, :width =>'115px', :height =>'120px', class: "image__list"
         .showMde--right
           %h1.item-name
             = @item.name

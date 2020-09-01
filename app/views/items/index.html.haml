@@ -31,7 +31,7 @@
             .itemsNew__content__box
               .itemsNew__content__box--image
                 %a{:href => item_path(item.id)}
-                  = image_tag (item.images[0].item_image.url), size: "220x240"
+                  = image_tag (item.images[0].item_image.url), size: "205x240"
               .itemsNew__content__box--details{"data-index" => "#{i}"}
                 %a{:href => item_path(item.id), class: "itemsNew-link"}
                   .hidden_field
@@ -44,5 +44,6 @@
   .footer
     = render "footer-top"
     = render "footer-bottom"
-.btn
-  = render "posts-btn"
+-if user_signed_in?
+  .btn
+    = render "posts-btn"
