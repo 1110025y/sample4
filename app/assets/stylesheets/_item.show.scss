@@ -48,6 +48,15 @@
           height: 550px;
           border: 1px solid #EEEEEE;
         }
+        .itemImage--sub{
+          display: flex;
+        }
+        .itemSub-images{
+          margin: 10px 0 0 10px;
+        }
+        .image__list:hover{
+          border: 2px solid #FF66FF;
+        }
       }
       .showMde--right{
         width: 50%;
@@ -129,6 +138,7 @@
           border: 1px solid #DCDCDC;
           overflow: scroll;
           opacity: 0.6;
+          padding: 5px 0 0 10px;
         }
         .item-list{
           width: 400px;
@@ -172,24 +182,89 @@
     }
     .body-showUnder{
       width: 100%;
-      height: 300px;
       .showUnder-text{
         font-weight: bold;
         opacity: 0.6;
         color: #000;
-        margin: 100px 0 10px 13%;
+        margin: 100px 0 10px 10%;
       }
       .underBar{
-        width: 75%;
+        width: 80%;
         border-bottom: 1px solid #DCDCDC;
         color: #777777;
-        margin-left: 11%;
+        margin-left: 9%;
+      }
+      .comment-list{
+        width: 70%;
+        margin: 20px 0 50px 13%;
+        .comments{
+          width: 100%;
+          height: 100px;
+          border: 1px solid #DCDCDC;
+          margin: 5px 0 5px 0;
+          padding: 5px 0 0 10px;
+          color: #777777;
+        }
       }
       .comment-box{
         width: 70%;
-        height: 70%;
+        height: 330px;
         background-color: #F5F5F5;
-        margin: 20px 0 10px 13%;
+        margin: 20px 0 20px 13%;
+        padding: 25px 0 0 70px;
+        border-radius: 5px 5px 5px 5px / 5px 5px 5px 5px;
+        .fa-exclamation-triangle{
+          color: #FF3333;
+          font-size: 20px;
+          margin-bottom: 8px;
+        }
+        .caution{
+          color: #FF3333;
+          font-size: 14px;
+        }
+        .comment-area{
+          width: 90%;
+          height: 150px;
+          padding: 5px 0 0 10px;
+        }
+        .comment-send{
+          width: 110px;
+          height: 45px;
+          display: block;
+          color: #fff;
+          background-color: #FF0066;
+          border-radius: 5px 5px 5px 5px / 5px 5px 5px 5px;
+          border: transparent;
+          margin: 10px 0 0 36%;
+        }
+        .comment-send:hover {
+          opacity: 0.5 ;
+          background-color: #FF66FF;
+        }
+        .login-caution{
+          color: #FF0066;
+          font-size: 13px;
+          margin: 5px 0 0 25%;
+        }
+        .comment-box_login{
+          width: 110px;
+          height: 45px;
+          display: block;
+          color: #fff;
+          background-color: #FF0066;
+          border-radius: 5px 5px 5px 5px / 5px 5px 5px 5px;
+          border: transparent;
+          margin: 10px 0 0 36%;
+          padding: 10px 0 0 20px;
+          text-decoration: none;
+          font-weight: bold;
+        }
+      }
+      .backBtn{
+        display: block;
+        text-decoration: none;
+        margin: 0 50px 80px 0;
+        text-align: center;
       }
     }
   }

@@ -48,17 +48,19 @@ $(document).on('turbolinks:load', function(){
   $(function() {
     //マウスを乗せたら発動
     $('.itemsNew__content__box--details').hover(function() {
+      // このthisは、複数有るどの画像をクリックしたか特定する
       var index = $(this).data('index');
       //マウスを乗せたら色が変わる
       $(`.itemsNew__content__box--details[data-index="${index}"]`).css('opacity', '0');
 
     //ここにはマウスを離したときの動作を記述
     }, function() {
-  
+
       //色指定を空欄にすれば元の色に戻る
       $('.itemsNew__content__box--details').css('opacity', '0.7');
     });
   });
 
 });
+
 
