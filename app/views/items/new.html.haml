@@ -1,40 +1,7 @@
 .contents
   = render "header-top"
   .contents__body
-    .contents__body__side
-      .contents__body__side--1
-        %p.mypage マイページメニュー
-        .box
-          %p.box__letter お知らせ
-        .box
-          %p.box__letter いいねした商品
-      .contents__body__side--2
-        %p.mypage 商品を出品する
-        .box
-          = link_to new_item_path do
-            %p.box__letter 商品を出品する
-        .box
-          %p.box__letter 出品した商品
-        .box
-          %p.box__letter 自分のショップを見る
-      .contents__body__side--3
-        %p.mypage 商品を購入する
-        .box
-          %p.box__letter 購入した商品
-        .box
-          %p.box__letter 最近見た商品
-        .box
-          %p.box__letter コメントした商品
-      .contents__body__side--4
-        %p.mypage 設定・ヘルプ・その他
-        .box
-          %p.box__letter 売上・ポイント管理
-        .box
-          %p.box__letter 設定
-        .box
-          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "box__letter"
-
-
+    = render "side-bar"
     .contents__body__input-list
       = form_with(model: @item, url: items_path, local: true, class: "contents__body__input-list__form") do |f|
 

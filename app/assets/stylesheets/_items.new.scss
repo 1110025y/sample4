@@ -12,94 +12,7 @@
     height: 100%;
     background-color: #F5F5F5;
     display: flex;
-    &__side{
-      width: 40%;
-      height: 100%;
-      padding-top: 30px;
-      &--1{
-        margin-left: 40%;
-        .mypage{
-          font-weight: bold;
-          width: 45%;
-          height: 20%;
-        }
-        .box{
-          width: 70%;
-          height: 60px;
-          background-color: white;
-          border: 1px solid #DDDDDD;
-          &__letter{
-            font-size: 15px;
-            padding-left: 13px;
-            padding-top: 4px;
-            color: #555555;
-          }
-        }
-      }
-      &--2{
-        margin-left: 40%;
-        margin-top: 40px;
-        .mypage{
-          font-weight: bold;
-          width: 45%;
-          height: 20%;
-        }
-        .box{
-          width: 70%;
-          height: 60px;
-          background-color: white;
-          border: 1px solid #DDDDDD;
-          &__letter{
-            font-size: 15px;
-            padding-left: 13px;
-            padding-top: 4px;
-            color: #555555;
-          }
-        }
-      }
-      &--3{
-        margin-left: 40%;
-        margin-top: 40px;
-        .mypage{
-          font-weight: bold;
-          width: 45%;
-          height: 20%;
-        }
-        .box{
-          width: 70%;
-          height: 60px;
-          background-color: white;
-          border: 1px solid #DDDDDD;
-          &__letter{
-            font-size: 15px;
-            padding-left: 13px;
-            padding-top: 4px;
-            color: #555555;
-          }
-        }
-      }
-      &--4{
-        margin-left: 40%;
-        margin-top: 40px;
-        .mypage{
-          font-weight: bold;
-          width: 45%;
-          height: 20%;
-        }
-        .box{
-          width: 70%;
-          height: 60px;
-          background-color: white;
-          border: 1px solid #DDDDDD;
-          &__letter{
-            font-size: 15px;
-            padding-left: 13px;
-            padding-top: 4px;
-            color: #555555;
-          }
-        }
-      }
-    }
+    
     &__input-list{
       width: 50%;
       height: 90%;
@@ -108,8 +21,6 @@
       &__form{
         height: 100%;
         
-
-
         .product-name{
           height: 100px;
           display: flex;

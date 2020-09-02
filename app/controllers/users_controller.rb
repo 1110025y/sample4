@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
   
-  def index
-  end
 
   def new
   end
@@ -18,8 +16,16 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(id: current_user.id)
     @items = Item.all
+    @nickname = current_user.nickname
+  end
+
+  def exhibitedShow
+    @items = Item.all
+    @nickname = current_user.nickname
+  end
+
+  def setUpShow
   end
 
   private
