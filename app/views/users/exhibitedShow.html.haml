@@ -23,7 +23,7 @@
                         = "¥#{item.price}"
                   .btn-field
                     = link_to "編集", "#", class: "link-btn1", data: {"turbolinks" => false}
-                    = link_to '削除', "#", class: "link-btn2", method: :delete
+                    = link_to '削除', "/items/#{item.id}", class: "link-btn2", method: :delete
   .contents__box
   .footer
-  = render "footer-bottom"
+    = render "footer-bottom"

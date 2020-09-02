@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     member do
       get 'exhibitedShow'
     end
+    collection do
+      get 'setUpShow'
+    end
   end
 
 end

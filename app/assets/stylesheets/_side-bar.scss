@@ -18,7 +18,7 @@
       padding-top: 30px;
       &--1{
         margin-left: 40%;
-        .mypage{
+        .menu{
           font-weight: bold;
           width: 45%;
           height: 20%;
@@ -39,7 +39,7 @@
       &--2{
         margin-left: 40%;
         margin-top: 40px;
-        .mypage{
+        .menu{
           font-weight: bold;
           width: 45%;
           height: 20%;
@@ -49,9 +49,9 @@
           height: 60px;
           background-color: white;
           border: 1px solid #DDDDDD;
-          &__exhibit{
+          .link-btn{
             text-decoration: none;
-            &__letter{
+            .link-letter{
               font-size: 15px;
               padding-left: 13px;
               padding-top: 4px;
@@ -64,16 +64,16 @@
             padding-top: 4px;
             color: #555555;
           }
-        }
-        .box__exhibit__letter:hover{
-          opacity: 0.6;
-          color: #FF0000;
+          .link-letter:hover{
+            opacity: 0.6;
+            color: #FF0000;
+          }
         }
       }
       &--3{
         margin-left: 40%;
         margin-top: 40px;
-        .mypage{
+        .menu{
           font-weight: bold;
           width: 45%;
           height: 20%;
@@ -94,7 +94,7 @@
       &--4{
         margin-left: 40%;
         margin-top: 40px;
-        .mypage{
+        .menu{
           font-weight: bold;
           width: 45%;
           height: 20%;
@@ -104,11 +104,18 @@
           height: 60px;
           background-color: white;
           border: 1px solid #DDDDDD;
-          &__letter{
-            font-size: 15px;
-            padding-left: 13px;
-            padding-top: 4px;
-            color: #555555;
+          .link-btn{
+            text-decoration: none;
+            .link-letter{
+              font-size: 15px;
+              padding-left: 13px;
+              padding-top: 4px;
+              color: #555555;
+            }
+            .link-letter:hover{
+              opacity: 0.6;
+              color: #FF0000;
+            }
           }
           &__logout{
             font-size: 15px;

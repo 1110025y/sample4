@@ -1,22 +1,22 @@
 .contents__body__side
   .contents__body__side--1
-    %p.mypage マイページメニュー
+    %p.menu マイページメニュー
     .box
       %p.box__letter お知らせ
     .box
       %p.box__letter いいねした商品
   .contents__body__side--2
-    %p.mypage 商品を出品する
+    %p.menu 商品を出品する
     .box
-      = link_to new_item_path , class: "box__exhibit" do
-        %p.box__exhibit__letter 商品を出品する
+      = link_to new_item_path , class: "link-btn" do
+        %p.link-letter 商品を出品する
     .box
-      = link_to exhibitedShow_user_path(:id) , class: "box__exhibit" do
-        %p.box__letter 出品した商品
+      = link_to exhibitedShow_user_path(:id) , class: "link-btn" do
+        %p.link-letter 出品した商品
     .box
       %p.box__letter 自分のショップを見る
   .contents__body__side--3
-    %p.mypage 商品を購入する
+    %p.menu 商品を購入する
     .box
       %p.box__letter 購入した商品
     .box
@@ -24,10 +24,12 @@
     .box
       %p.box__letter コメントした商品
   .contents__body__side--4
-    %p.mypage 設定・ヘルプ・その他
+    %p.menu 設定・ヘルプ・その他
     .box
-      %p.box__letter 売上・ポイント管理
+      = link_to setUpShow_users_path , class: "link-btn" do
+        %p.link-letter 設定
     .box
-      %p.box__letter 設定
+      = link_to "#" , class: "link-btn" do
+        %p.link-letter お問い合わせ
     .box
       = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "box__logout"

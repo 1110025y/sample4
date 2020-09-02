@@ -2,6 +2,9 @@
   = render "header-top"
   .contents__body
     = render "side-bar"
+    .show-contents
+      %p.showTitle
+        = "#{@nickname}さんのマイページ"
   .contents__box
   .footer
   = render "footer-bottom"

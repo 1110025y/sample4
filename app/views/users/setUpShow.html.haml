@@ -1,0 +1,48 @@
+.contents
+  = render "header-top"
+  .contents__body
+    = render "side-bar"
+    .setUp-list
+      %p.setUp-Title 設定
+      .setUp-content
+        .setUpHeading
+          %p.setUpHeading--title ユーザー情報
+        .setUpMenu
+          = link_to "#" , class: "menu-btn" do
+            %p.menu-text1 連絡先・住所の設定
+            %p.menu-text2 配送先の住所や電話番号などの情報
+        .setUpMenu
+          = link_to "#" , class: "menu-btn" do
+            %p.menu-text1 支払い方法登録
+            %p.menu-text2 クレジットカード情報入力
+        .setUpMenu-last
+          = link_to "#" , class: "menu-btn" do
+            %p.menu-text1 プロフィール登録
+            %p.menu-text2 プロフィール画像やプロフィール文入力
+      
+      .setUp-content2
+        .setUpHeading2
+          %p.setUpHeading2--title2 登録情報の変更
+        .setUpMenu2
+          = link_to "#" , class: "menu-btn2" do
+            %p.menu-text1 発送元・お届け先住所変更
+            %p.menu-text2 登録した住所や電話番号などの情報変更
+        .setUpMenu2
+          = link_to "#" , class: "menu-btn2" do
+            %p.menu-text1 ログイン情報の変更
+            %p.menu-text2 登録したメール/パスワード、氏名の情報変更
+        .setUpMenu-last
+          = link_to destroy_user_session_path, method: :delete, class: "menu-btn2" do
+            %p.menu-text1 ログアウト
+            %p.menu-text2 Rider’s Garageからログアウトします
+
+      .setUp-content3
+        .setUpHeading3
+          %p.setUpHeading3--title3 登録情報の変更
+        .setUpMenu3
+          = link_to "#" , class: "menu-btn3" do
+            %p.menu-text1 退会申請
+            %p.menu-text2 Rider’s Garageから退会申請します
+  .contents__box
+  .footer
+    = render "footer-bottom"
