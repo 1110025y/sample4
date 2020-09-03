@@ -26,6 +26,7 @@ class UsersController < ApplicationController
   end
 
   def setUpShow
+    @address = current_user.address
   end
 
   private
