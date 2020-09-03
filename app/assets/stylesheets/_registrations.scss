@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+
 // registrations/new.htmlのscss
 .contents{
   height: 100%;
@@ -401,6 +402,9 @@
       color: #FFF;
       border: 1px solid #DDDDDD;
     }
+    .actions:hover{
+      opacity: 0.5 ;
+      color: #FF00FF;
+    }
   }
-  
 }
