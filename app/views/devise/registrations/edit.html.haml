@@ -1,36 +1,67 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
-      %br/
-      %em
-        = @minimum_password_length
-        characters minimum
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
-  .actions
-    = f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+.contents
+  = render "header-top"
+  .contents__body
+    = render "side-bar"
+    .rstEdit
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+        %h2.rstEdit--title
+          ログイン情報の変更
+        = render "devise/shared/error_messages", resource: resource
+        .rstEdit--list
+          .fields
+            %p.letter メールアドレス
+          %p.Form-mge ＜変更が有れば新しく入力し直してください＞
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "Form-text"
+          .box
+          - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+            %div
+              Currently waiting confirmation for: #{resource.unconfirmed_email}
+          
+          .fields
+            %p.letter 新しいパスワード
+          - if @minimum_password_length
+            %em.psw
+              = "※最小文字数 #{@minimum_password_length}文字"
+          %p.Form-mge ※変更したくない場合は空白のまま
+          = f.password_field :password, autocomplete: "new-password", class: "Form-text"
+          .box
+          .fields
+            %p.letter 新しいパスワード（確認）
+          %p.Form-mge ※変更したくない場合は空白のまま
+          = f.password_field :password_confirmation, autocomplete: "new-password", class: "Form-text"
+          .box
+          .fields
+            %p.letter 現在のパスワード
+          %p.Form-mge ※変更を確認するには、現在のパスワードが必要です
+          = f.password_field :current_password, autocomplete: "current-password", class: "Form-text"
+          .box
+          .field
+            .fields-box
+              .fields-ns
+                %p.letter-ns 氏名
+              %p.Form-mge-ns ＜変更が有れば新しく入力し直してください＞
+              = f.text_field :family_name, class: "Form-text-ns"
+            .fields-box
+              .fields-ns
+                %p.letter-ns 名前
+              %p.Form-mge-ns ＜変更が有れば新しく入力し直してください＞
+              = f.text_field :first_name, class: "Form-text-ns"
+          .field
+            .fields-box
+              .fields-ns
+                %p.letter-ns 氏名（フリガナ）
+              %p.Form-mge-ns ＜変更が有れば新しく入力し直してください＞
+              = f.text_field :family_name_kana, class: "Form-text-ns"
+            .fields-box
+              .fields-ns
+                %p.letter-ns 名前（フリガナ）
+              %p.Form-mge-ns ＜変更が有れば新しく入力し直してください＞
+              = f.text_field :first_name_kana, class: "Form-text-ns"
+          
+          
+          .box
+          .actions
+            = f.submit "変更する", class: "Form-send"
+  .contents__box
+  .footer
+  = render "footer-bottom"

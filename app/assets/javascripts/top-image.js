@@ -60,7 +60,6 @@ $(document).on('turbolinks:load', function(){
       $('.itemsNew__content__box--details').css('opacity', '0.7');
     });
   });
-
 });
 
 
