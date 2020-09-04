@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   end
 
   resources :addresses, only: [:new, :create, :edit, :update]
+  resources :credit_cards, only: [:new, :create, :destroy, :show]
 end
