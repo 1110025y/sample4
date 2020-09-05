@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     resources :comments, only: :create
     collection do
       get 'category/get_category_children', to: 'items#get_category_children', defaults: { format: 'json' }
-      get 'category'
     end
   end
   resources :users do
@@ -21,4 +20,9 @@ Rails.application.routes.draw do
   end
 
   resources :addresses, only: [:new, :create, :edit, :update]
+  resources :credit_cards, only:[:index, :new, :create, :destroy, :show] do
+    member do
+      post 'pay'
+    end
+  end
 end
