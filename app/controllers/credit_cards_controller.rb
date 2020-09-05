@@ -1,79 +1,59 @@
 class CreditCardsController < ApplicationController
-  
-  require 'payjp'
-  
+  require "payjp"
+
   def new
-    @card = CreditCard.where(user_id: current_user.id)
-    if @card.exists?
-      redirect_to credit_card_path(current_user.id)
-    end
+    
   end
 
   def create
     Payjp.api_key = "sk_test_eecf4c9853b6665b3a9699a6"
-    
-    if params["payjp_token"].blank?
-      redirect_to action: "new", alert: "クレジットカードを登録できませんでした。"
-    else
-      customer = Payjp::Customer.create(
-        card: params["payjp_token"],
-        metadata: {user_id: current_user.id}
-      )
-    
-      @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
-      if @card.save
-        redirect_to credit_card_path(@card), notice: "クレジットカードの登録が完了しました"
-      else
-        redirect_to action: "create"
-      end
-    end
-  end
-
-  def show
-    @card = CreditCard.find_by(user_id: current_user.id)
-    if @card.blank?
+    if params['payjp-token'].blank?
       redirect_to action: "new"
+      # トークンが取得出来てなければループ
     else
-      Payjp.api_key = "sk_test_c806e554d011ef961a9f1ea5"
-      customer = Payjp::Customer.retrieve(@card.customer_id)
-      @customer_card = customer.cards.retrieve(@card.card_id)
-
-      @card_brand = @customer_card.brand
-      case @card_brand
-      when "Visa"
-        @card_src = "visa.svg"
-      when "JCB"
-        @card_src = "jcb.svg"
-      when "MasterCard"
-        @card_src = "master.svg"
-      when "Discover"
-        @card_src = "discover.svg"
+      user_id = current_user.id
+      customer = Payjp::Customer.create(
+      card: params['payjp-token']
+      # params['payjp-token']（response.id）からcustomerを作成
+      ) 
+      @card = CreditCard.new(user_id: user_id, customer_id: customer.id, card_id: customer.default_card)
+      if @card.save
+        flash[:notice] = '登録しました'
+        redirect_to action: "show"
+      else
+        flash[:alert] = '登録できませんでした'
+        redirect_to action: "new"
       end
-      @exp_month = @customer_card.exp_month.to_s
-      @exp_year = @customer_card.exp_year.to_s.slice(2,3)
     end
   end
-
+  
+  def show #Cardのデータpayjpに送り情報を取り出します
+    @card = CreditCard.where(user_id: current_user.id).first
+    if @card.blank?
+      redirect_to action: "new" 
+    else
+      Payjp.api_key = "sk_test_eecf4c9853b6665b3a9699a6"
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
+    end
+  end
+  
   def destroy 
     @card = CreditCard.find_by(user_id: current_user.id)
     if @card.blank?
-      redirect_to action: "new"
+      redirect_to action: "show"
     else
-      Payjp.api_key = "sk_test_c806e554d011ef961a9f1ea5"
+      Payjp.api_key = "sk_test_eecf4c9853b6665b3a9699a6"
       customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
       @card.delete
       if @card.destroy
+        redirect_to user_path(:id), notice: "削除が完了しました"
       else
-        redirect_to credit_card_path(current_user.id), alert: "削除できませんでした。"
+        edirect_to action: "show", alert: "削除できませんでした。"
       end
     end
   end
 
-  private
-
-  def credit_card_params
-    params.require(:credit_card).permit(:user_id, :customer_id, :card_id).merge(user_id: current_user.id)
-  end
 
 end
