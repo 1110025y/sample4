@@ -125,6 +125,10 @@
             background-color: #FF66FF;
           }
         }
+        .emptyBox{
+          height: 55px;
+          margin-top: 7%;
+        }
         .item-introduction{
           width: 400px;
           height: 35px;
@@ -273,4 +277,30 @@
       }
     }
   }
+}
+
+
+//独立ボタン>>削除機能
+.delete-btn {
+  width: 120px;
+  background: #ce3c79;
+  text-align: center;
+  border-radius: 20%;
+  bottom: 32px;
+  right: 25px;
+  position: fixed;
+  padding: 15px;
+  &__text {
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+  &__icon {
+    width: 100%;
+  }
+}
+.delete-btn:hover {
+  opacity: 0.5 ;
 }

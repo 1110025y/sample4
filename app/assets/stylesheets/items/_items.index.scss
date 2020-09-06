@@ -3,34 +3,6 @@
 }
 
 
-//トップページ購入ボタン
-.btn {
-  .posts-btn {
-    width: 140px;
-    background: #FF4F02;
-    text-align: center;
-    border-radius: 20%;
-    bottom: 32px;
-    right: 50px;
-    position: fixed;
-    padding: 15px;
-    &__text {
-      color: #fff;
-      display: block;
-      font-size: 18px;
-      text-decoration: none;
-      margin-bottom: 5px;
-    }
-    &__icon {
-      width: 60%;
-    }
-  }
-  .posts-btn:hover {
-    opacity: 0.5 ;
-    background-color: #FF66FF;
-  }
-}
-
 #slide{
   position:relative;
 }
@@ -39,7 +11,6 @@
   left:0;
   top:0;
 }
-
 
 
 
@@ -169,4 +140,31 @@
       border: 2px solid #FF66FF;
     }
   }
+}
+
+
+//トップページ購入ボタン
+.posts-btn {
+  width: 140px;
+  background: #FF4F02;
+  text-align: center;
+  border-radius: 20%;
+  bottom: 32px;
+  right: 50px;
+  position: fixed;
+  padding: 15px;
+  &__text {
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+  &__icon {
+    width: 60%;
+  }
+}
+.posts-btn:hover {
+  opacity: 0.5 ;
+  background-color: #FF66FF;
 }

@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.setUp-list{
+  width: 60%;
+  height: 100%;
+  padding-top: 30px;
+  .setUp-Title{
+    font-weight: bold;
+    font-size: 20px;
+    opacity: 0.8;
+    margin: 0 0 30px 7px;
+  }
+  .setUp-content{
+    width: 80%;
+    height: 252px;
+    border: 1px solid #cccccc;
+    box-shadow: 1px 1px 1px 1px #999999;
+    .setUpHeading{
+      height: 40px;
+      border-bottom: 1px solid #cccccc;
+      background-color: #eeeeee;
+      &--title{
+        font-size: 15px;
+        font-weight: bold;
+        color: #333333;
+        opacity: 0.7;
+        padding: 6px 0 0 10px;
+      }
+    }
+    .setUpMenu{
+      height: 70px;
+      background-color: #FFF;
+      border-bottom: 1px solid #cccccc;
+      padding: 12px 0 0 15px;
+      .menu-btn{
+        text-decoration: none;
+        .menu{
+          width: 100%;
+          height: 100%;
+          .menu-text1{
+            font-size: 15px;
+            font-weight: bold;
+            color: #111111;
+            opacity: 0.7;
+          }
+          .menu-text2{
+            font-size: 12px;
+            font-weight: bold;
+            color: #333333;
+            opacity: 0.7;
+          }
+        }
+        .menu:hover{
+          opacity: 0.5;
+          color: #FF00FF;
+        }
+      }
+    }
+    .setUpMenu-last{
+      height: 70px;
+      background-color: #FFF;
+      padding: 12px 0 0 15px;
+      .menu-btn{
+        text-decoration: none;
+        .menu{
+          width: 100%;
+          height: 100%;
+          .menu-text1{
+            font-size: 15px;
+            font-weight: bold;
+            color: #111111;
+            opacity: 0.7;
+          }
+          .menu-text2{
+            font-size: 12px;
+            font-weight: bold;
+            color: #333333;
+            opacity: 0.7;
+          }
+        }
+        .menu:hover{
+          opacity: 0.5;
+          color: #FF00FF;
+        }
+      }
+    }
+  }
+  .setUp-content2{
+    width: 80%;
+    height: 252px;
+    border: 1px solid #cccccc;
+    margin-top: 30px;
+    box-shadow: 1px 1px 1px 1px #999999;
+    .setUpHeading2{
+      height: 40px;
+      border-bottom: 1px solid #cccccc;
+      background-color: #eeeeee;
+      &--title2{
+        font-size: 15px;
+        font-weight: bold;
+        color: #333333;
+        opacity: 0.7;
+        padding: 6px 0 0 10px;
+      }
+    }
+    .setUpMenu2{
+      height: 70px;
+      background-color: #FFF;
+      border-bottom: 1px solid #cccccc;
+      padding: 12px 0 0 15px;
+      .menu-btn2{
+        text-decoration: none;
+        .menu{
+          width: 100%;
+          height: 100%;
+          .menu-text1{
+            font-size: 15px;
+            font-weight: bold;
+            color: #111111;
+            opacity: 0.7;
+          }
+          .menu-text2{
+            font-size: 12px;
+            font-weight: bold;
+            color: #333333;
+            opacity: 0.7;
+          }
+        }
+        .menu:hover{
+          opacity: 0.5;
+          color: #FF00FF;
+        }
+      }
+    }
+    .setUpMenu-last{
+      height: 70px;
+      background-color: #FFF;
+      padding: 12px 0 0 15px;
+      .menu-btn2{
+        text-decoration: none;
+        .menu{
+          width: 100%;
+          height: 100%;
+          .menu-text1{
+            font-size: 15px;
+            font-weight: bold;
+            color: #111111;
+            opacity: 0.7;
+          }
+          .menu-text2{
+            font-size: 12px;
+            font-weight: bold;
+            color: #333333;
+            opacity: 0.7;
+          }
+        }
+        .menu:hover{
+          opacity: 0.5;
+          color: #FF00FF;
+        }
+      }
+    }
+  }
+  .setUp-content3{
+    width: 80%;
+    height: 112px;
+    border: 1px solid #cccccc;
+    margin-top: 30px;
+    box-shadow: 1px 1px 1px 1px #999999;
+    .setUpHeading3{
+      height: 40px;
+      border-bottom: 1px solid #cccccc;
+      background-color: #eeeeee;
+      &--title3{
+        font-size: 15px;
+        font-weight: bold;
+        color: #333333;
+        opacity: 0.7;
+        padding: 6px 0 0 10px;
+      }
+    }
+    .setUpMenu3{
+      height: 70px;
+      background-color: #FFF;
+      padding: 12px 0 0 15px;
+      .menu-btn3{
+        text-decoration: none;
+        .menu-text1{
+          font-size: 15px;
+          font-weight: bold;
+          color: #111111;
+          opacity: 0.7;
+        }
+        .menu-text2{
+          font-size: 12px;
+          font-weight: bold;
+          color: #333333;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+

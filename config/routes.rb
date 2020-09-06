@@ -9,7 +9,12 @@ Rails.application.routes.draw do
     collection do
       get 'category/get_category_children', to: 'items#get_category_children', defaults: { format: 'json' }
     end
+    member do
+      get 'purchase'
+      post 'pay'
+    end
   end
+
   resources :users do
     member do
       get 'exhibitedShow'
@@ -20,9 +25,6 @@ Rails.application.routes.draw do
   end
 
   resources :addresses, only: [:new, :create, :edit, :update]
-  resources :credit_cards, only:[:index, :new, :create, :destroy, :show] do
-    member do
-      post 'pay'
-    end
-  end
+  resources :credit_cards, only:[:index, :new, :create, :destroy, :show]
+  
 end

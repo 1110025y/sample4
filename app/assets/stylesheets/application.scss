@@ -1,22 +1,26 @@
-@import "reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-@import "items.new";
-@import "items.index";
-@import "item.show";
+@import "items/items.new";
+@import "items/items.index";
+@import "items/items.show";
+@import "items/items.purchase";
+@import "items/items.categories";
 
-@import "user.new";
-@import "user.show";
+@import "user/user.new";
+@import "user/user.show";
+@import "user/exhibitedShow";
+@import "user/setUpShow";
 
-@import "registrations";
-@import "sessions";
+@import "devise/registrations";
+@import "devise/sessions";
 
+@import "common/reset";
+@import "common/header-top";
+@import "common/footer-top";
+@import "common/side-bar";
+@import "common/flash-messages";
 
-@import "header-top";
-@import "footer-top";
-@import "side-bar";
-@import "categories";
 
 @import "addresses";
 

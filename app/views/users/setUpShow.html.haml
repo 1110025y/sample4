@@ -9,33 +9,38 @@
           %p.setUpHeading--title ユーザー情報
         .setUpMenu
           = link_to new_address_path , class: "menu-btn" do
-            %p.menu-text1 連絡先・住所の設定
-            %p.menu-text2 配送先の住所や電話番号などの情報
+            .menu
+              %p.menu-text1 連絡先・住所の設定
+              %p.menu-text2 配送先の住所や電話番号などの情報
         .setUpMenu
           = link_to new_credit_card_path , class: "menu-btn" do
-            %p.menu-text1 支払い方法登録
-            %p.menu-text2 クレジットカード情報入力
+            .menu
+              %p.menu-text1 支払い方法登録
+              %p.menu-text2 クレジットカード情報入力
         .setUpMenu-last
-          = link_to "#" , class: "menu-btn" do
-            %p.menu-text1 プロフィール登録
-            %p.menu-text2 プロフィール画像やプロフィール文入力
+          = link_to destroy_user_session_path , class: "menu-btn" do
+            .menu
+              %p.menu-text1 ログアウト
+              %p.menu-text2 Rider’s Garageからログアウトします
       
       .setUp-content2
         .setUpHeading2
-          %p.setUpHeading2--title2 登録情報の変更
+          %p.setUpHeading2--title2 登録情報の変更・削除
         .setUpMenu2
           = link_to edit_address_path(:id) , class: "menu-btn2" do
-            %p.menu-text1 発送元・お届け先住所変更
-            %p.menu-text2 登録した住所や電話番号などの情報変更
+            .menu
+              %p.menu-text1 発送元・お届け先住所変更
+              %p.menu-text2 登録した住所や電話番号などの情報変更
         .setUpMenu2
-          = link_to edit_user_registration_path , class: "menu-btn2" do
-            %p.menu-text1 ログイン情報の変更
-            %p.menu-text2 登録したメール/パスワード、氏名の情報変更
+          = link_to credit_card_path(:id),  class: "menu-btn2" do
+            .menu
+              %p.menu-text1 支払い方法確認
+              %p.menu-text2 クレジットカード情報確認
         .setUpMenu-last
-          = link_to destroy_user_session_path, method: :delete, class: "menu-btn2" do
-            %p.menu-text1 ログアウト
-            %p.menu-text2 Rider’s Garageからログアウトします
-
+          = link_to edit_user_registration_path , class: "menu-btn2" do
+            .menu
+              %p.menu-text1 ログイン情報の変更
+              %p.menu-text2 登録したメール/パスワード、氏名の情報変更
       .setUp-content3
         .setUpHeading3
           %p.setUpHeading3--title3 登録情報の変更
@@ -46,3 +51,4 @@
   .contents__box
   .footer
     = render "footer-bottom"
+    
