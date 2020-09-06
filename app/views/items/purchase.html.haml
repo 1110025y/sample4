@@ -57,7 +57,9 @@
             - exp_year = @customer_card.exp_year.to_s.slice(2,3)
             = exp_month + " / " + exp_year
     .purchase-attention
-      %a{:href => pay_item_path(@item.id), method: :post, class: "pay-btn-link"}
-        .pay-btn
-          %i.fas.fa-credit-card
-          %p.btn-text 支払う
+      = link_to "支払う", pay_item_path, method: :post, class: "pay-btn"
+
+      -# %a{:href => pay_item_path, method: :post, class: "pay-btn-link"}
+      -#   .pay-btn
+      -#     %i.fas.fa-credit-card
+      -#     %p.btn-text 支払う

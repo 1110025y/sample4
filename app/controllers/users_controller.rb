@@ -25,6 +25,10 @@ class UsersController < ApplicationController
     @address = current_user.address
   end
 
+  def purchaseGoods
+    @items = Item.all
+  end
+
   # private
   # def user_registration_params
   #   params.require(:user).permit(:nickname, :family_name, :first_name, :family_name_kana, :first_name_kana)

@@ -88,6 +88,7 @@ class ItemsController < ApplicationController
 
 
   def pay
+    @item = Item.find(params[:id])
     @card = CreditCard.find_by(user_id: current_user.id)
     Payjp.api_key = "sk_test_eecf4c9853b6665b3a9699a6"
     
@@ -98,13 +99,13 @@ class ItemsController < ApplicationController
     )
 
     @item.update(buyer_id: current_user.id)
-    redirect_to root_path, notice: '購入しました'
+    redirect_to user_path(:id), notice: '商品の購入が完了しました！'
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :prefecture_id, :category_id, :shipping_date_id , :delivery_fee_id, :status_id, :introduction, :brand, images_attributes: [:item_image, :_destroy, :id]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :price, :prefecture_id, :category_id, :shipping_date_id , :delivery_fee_id, :buyer_id, :status_id, :introduction, :brand, images_attributes: [:item_image, :_destroy, :id]).merge(user_id: current_user.id)
   end
   
 end

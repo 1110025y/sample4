@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get 'exhibitedShow'
+      get 'purchaseGoods'
     end
     collection do
       get 'setUpShow'

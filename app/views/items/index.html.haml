@@ -26,19 +26,33 @@
     .items-separator
     .itemsNew
       - @items.each_with_index do |item,i|
-        - if item.images.present?
-          .itemsNew__content
-            .itemsNew__content__box
-              .itemsNew__content__box--image
-                %a{:href => item_path(item.id)}
-                  = image_tag (item.images[0].item_image.url), size: "205x240"
-              .itemsNew__content__box--details{"data-index" => "#{i}"}
-                %a{:href => item_path(item.id), class: "itemsNew-link"}
-                  .hidden_field
-                    .iName
-                      = "#{item.name}"
-                    .iPrice
-                      = "¥#{item.price}"
+        - if item.buyer_id.present?
+          - if item.images.present?
+            .itemsNew__content
+              .itemsNew__content__box
+                .itemsNew__content__box--image
+                  %a{:href => item_path(item.id)}
+                    = image_tag (item.images[0].item_image.url), size: "205x240"
+                .itemsNew__content__box--details{"data-index" => "#{i}"}
+                  %a{:href => item_path(item.id), class: "itemsNew-link"}
+                    .hidden_field
+                      SOLD OUT
+                
+                  
+        - else
+          - if item.images.present?
+            .itemsNew__content
+              .itemsNew__content__box
+                .itemsNew__content__box--image
+                  %a{:href => item_path(item.id)}
+                    = image_tag (item.images[0].item_image.url), size: "205x240"
+                .itemsNew__content__box--details{"data-index" => "#{i}"}
+                  %a{:href => item_path(item.id), class: "itemsNew-link"}
+                    .hidden_field
+                      .iName
+                        = "#{item.name}"
+                      .iPrice
+                        = "¥#{item.price}"
   .category-contents
     = render "category-list"
   .footer

@@ -1,0 +1,26 @@
+.contents
+  = render "header-top"
+  .contents__body
+    = render "side-bar"
+    .exhibited-list
+      %p.exhibitedText 購入した商品
+      .exhibitedHeading
+        %p.exhibitedHeading--title 購入した商品一覧
+      .exhibitedGoods
+        - @items.each do |item,i|
+          - if item.buyer_id.present?
+            - if item.images.present?
+              .exhibitedGoods__box
+                .exhibitedGoods--image
+                  %a{:href => item_path(item.id)}
+                    = image_tag (item.images[0].item_image.url), size: "205x230"
+                .exhibitedGoods--details{"data-index" => "#{i}"}
+                  %a{:href => item_path(item.id), class: "exhibitedGoods--link"}
+                    .text_field
+                      .iName
+                        = "#{item.name}"
+                      .iPrice
+                        = "¥#{item.price}"
+  .contents__box
+  .footer
+    = render "footer-bottom"
