@@ -19,7 +19,7 @@ class CreditCardsController < ApplicationController
       @card = CreditCard.new(user_id: user_id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
         flash[:notice] = '登録しました'
-        redirect_to action: "show"
+        redirect_to user_path(:id)
       else
         flash[:alert] = '登録できませんでした'
         redirect_to action: "new"

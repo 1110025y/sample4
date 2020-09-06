@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   #   @user = User.create(user_registration_params)
   #   @nickname = current_user.nickname
   # end
+  
 
 
   def show
