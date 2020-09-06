@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.contents__box{
+  height: 130px;
+  background-color: #F5F5F5;
+}
+
+
+// users/showのscss
+.show-contents{
+  width: 60%;
+  height: 100%;
+  padding-top: 30px;
+  .showTitle{
+    font-weight: bold;
+    font-size: 20px;
+    opacity: 0.8;
+  }
+}
+

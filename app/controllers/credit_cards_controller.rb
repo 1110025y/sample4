@@ -8,8 +8,7 @@ class CreditCardsController < ApplicationController
   def create
     Payjp.api_key = "sk_test_eecf4c9853b6665b3a9699a6"
     if params['payjp-token'].blank?
-      redirect_to action: "new"
-      # トークンが取得出来てなければループ
+      redirect_to action: "new" # トークンが取得出来てなければループ
     else
       user_id = current_user.id
       customer = Payjp::Customer.create(
@@ -26,6 +25,7 @@ class CreditCardsController < ApplicationController
     end
   end
   
+
   def show #Cardのデータpayjpに送り情報を取り出します
     @card = CreditCard.where(user_id: current_user.id).first
     if @card.blank?
@@ -36,6 +36,7 @@ class CreditCardsController < ApplicationController
       @default_card_information = customer.cards.retrieve(@card.card_id)
     end
   end
+  
   
   def destroy 
     @card = CreditCard.find_by(user_id: current_user.id)

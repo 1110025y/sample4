@@ -40,10 +40,13 @@
               = "¥#{@item.price}"
             .item-fee
               = @item.delivery_fee.name
-          %a{:href => "#", class: "buy-btn--link"}
-            .buy-btn
-              %i.fas.fa-shopping-cart
-              %p.btn-text 購入する
+          - if user_signed_in?
+            %a{:href => purchase_item_path(@item.id), class: "buy-btn--link"}
+              .buy-btn
+                %i.fas.fa-shopping-cart
+                %p.btn-text 購入する
+          - else
+            .emptyBox
           .item-introduction
             %p.itemExplanation 商品説明
           .item-contents
@@ -102,3 +105,8 @@
         %a.backBtn{:href => "/items"} トップページに戻る
   .footer
     = render "footer-bottom"
+  
+  - if user_signed_in?
+    -if current_user.id == @item.user_id
+      = render "delete-btn"
+    -else 

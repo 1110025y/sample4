@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  
 
   def index
     @items = Item.includes(:images).order('created_at DESC') #トップページに表示、更新した順番で
@@ -64,6 +65,41 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
+
+  def purchase
+    @family_name = current_user.family_name
+    @first_name = current_user.first_name
+    @item = Item.find(params[:id])
+    @card = CreditCard.find_by(user_id: current_user.id)
+    Payjp.api_key = "sk_test_eecf4c9853b6665b3a9699a6"
+    if @card.blank?
+      redirect_to user_path(:id), alert: "購入前にカード登録してください！"
+    else
+      @customer = Payjp::Customer.retrieve(@card.customer_id)
+      @customer_card = @customer.cards.retrieve(@card.card_id)
+    end
+
+    if current_user.address.present?
+      @address = current_user.address
+    else
+      redirect_to user_path(:id), alert: "購入前に住所登録してください！"
+    end
+  end
+
+
+  def pay
+    @card = CreditCard.find_by(user_id: current_user.id)
+    Payjp.api_key = "sk_test_eecf4c9853b6665b3a9699a6"
+    
+    charge = Payjp::Charge.create(
+      :amount => @item.price,
+      :customer => @card.customer_id,
+      :currency => 'jpy',
+    )
+
+    @item.update(buyer_id: current_user.id)
+    redirect_to root_path, notice: '購入しました'
+  end
 
   private
 

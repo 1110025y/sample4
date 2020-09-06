@@ -1,0 +1,63 @@
+.contents_purchase
+  .purchase-header
+    = link_to root_path, class: "logo-link" do
+      = image_tag src="/assets/14309.gif", width:"280", height:"150",class: "logo-pte"
+      %p.logo-name Rider’s Garage
+      %p.logo-text フリマアプリ&サイト
+  .purchase-box
+    .purchase-box--title
+      %p.title-mge 購入手続き
+    .purchase-item
+      .item-images
+        - @item.images.each_with_index do |image, index|
+          - if index == 0
+            .itemMain-images{"data-index" => "#{index}"}
+              = image_tag image.item_image.url, :width =>'250px', :height =>'220px', class: "imgPte"
+          - else
+      .item-details
+        %h1.item-name
+          = @item.name
+        .item-brand
+          = @item.brand
+        .item-date
+          = @item.shipping_date.name
+        %p.item-payment 支払い金額
+        .item-box
+          .item-price
+            = "¥#{@item.price}"
+          .item-fee
+            = @item.delivery_fee.name
+    .emptyBox
+    .purchase-delivery
+      .delivery-title 配送先
+      .address-postal
+        = "〒#{@address.postal_code}"
+      .address-box
+        .address-prefecture
+          = @address.prefecture.name
+        .address-city
+          = @address.city
+        .address-house_number
+          = @address.house_number
+      .address-apartment
+        = @address.apartment
+      .address-name
+        = @family_name
+        = @first_name
+    .emptyBox
+    .purchase-credit
+      .credit_card_info__numbers
+        .number
+          = "**** **** **** " + @customer_card.last4
+        .expiration_date
+          .expiration_date__title
+            有効期限
+          .expiration_date__info
+            - exp_month = @customer_card.exp_month.to_s
+            - exp_year = @customer_card.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+    .purchase-attention
+      %a{:href => pay_item_path(@item.id), method: :post, class: "pay-btn-link"}
+        .pay-btn
+          %i.fas.fa-credit-card
+          %p.btn-text 支払う

@@ -1,3 +1,7 @@
 - if flash[:notice]
-  .flashMge
+  %p.flashMge
     = flash[:notice]
+
+- if flash[:alert]
+  %p.flashMge
+    = flash[:alert]
