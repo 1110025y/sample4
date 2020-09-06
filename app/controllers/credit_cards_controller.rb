@@ -18,8 +18,7 @@ class CreditCardsController < ApplicationController
       ) 
       @card = CreditCard.new(user_id: user_id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        flash[:notice] = '登録しました'
-        redirect_to user_path(:id)
+        redirect_to user_path(:id), notice: "クレジットカード登録が完了しました！"
       else
         flash[:alert] = '登録できませんでした'
         redirect_to action: "new"
@@ -48,9 +47,9 @@ class CreditCardsController < ApplicationController
       customer.delete
       @card.delete
       if @card.destroy
-        redirect_to user_path(:id), notice: "削除が完了しました"
+        redirect_to user_path(:id), notice: "クレジットカードの削除が完了しました！"
       else
-        edirect_to action: "show", alert: "削除できませんでした。"
+        redirect_to action: "show", alert: "削除できませんでした。"
       end
     end
   end

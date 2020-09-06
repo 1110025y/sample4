@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path, notice: "出品が完了しました！"
+      redirect_to user_path(:id), notice: "商品出品が完了しました！"
     else
       render :new
     end

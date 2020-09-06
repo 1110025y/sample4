@@ -6,9 +6,9 @@ class CreateAddresses < ActiveRecord::Migration[6.0]
       t.string :city, null: false #市区町村
       t.string :house_number, null: false #番地
       t.string :apartment #建物名
-      t.integer :phone_number # 電話番号
+      t.text :phone_number # 電話番号
       t.integer :user_id
-      t.string :contact #その他
+      t.text :contact #その他
 
       t.timestamps
     end
