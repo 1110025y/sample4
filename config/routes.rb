@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     member do
       get 'exhibitedShow'
       get 'purchaseGoods'
+      get 'commentGoods'
     end
     collection do
       get 'setUpShow'

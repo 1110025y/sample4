@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   def exhibitedShow
     @items = Item.all
     @nickname = current_user.nickname
+    
   end
 
   def setUpShow
@@ -27,6 +28,11 @@ class UsersController < ApplicationController
 
   def purchaseGoods
     @items = Item.all
+  end
+
+  def commentGoods
+    @items = Item.all
+    @comments = Comment.all
   end
 
   # private

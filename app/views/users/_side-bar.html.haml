@@ -26,7 +26,8 @@
     .box
       %p.box__letter 最近見た商品
     .box
-      %p.box__letter コメントした商品
+      = link_to commentGoods_user_path(:id) , class: "link-btn" do
+        %p.link-letter コメントした商品
   .contents__body__side--4
     .heading
       %p.menu その他
