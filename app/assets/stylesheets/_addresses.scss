@@ -100,7 +100,6 @@
     .Form-send{
       width: 65%;
       height: 50px;
-      padding-left: 17px;
       font-size: 16px;
       border-radius: 20px;
       margin-left: auto;
@@ -115,6 +114,16 @@
     .form-post:hover{
       opacity: 0.5 ;
       color: #FF00FF;
+    }
+    .back-btn{
+      display: block;
+      margin-left: 47%;
+      margin-top: 25px;
+      text-decoration: none;
+      color: #00BFFF;
+    }
+    .back-btn:hover{
+      opacity: 0.5 ;
     }
   }
 }

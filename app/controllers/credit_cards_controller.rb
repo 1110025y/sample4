@@ -28,7 +28,8 @@ class CreditCardsController < ApplicationController
   def show #Cardのデータpayjpに送り情報を取り出します
     @card = CreditCard.where(user_id: current_user.id).first
     if @card.blank?
-      redirect_to action: "new" 
+      flash[:notice] = "Please credit card registration！"
+      redirect_to action: "new"
     else
       Payjp.api_key = "sk_test_eecf4c9853b6665b3a9699a6"
       customer = Payjp::Customer.retrieve(@card.customer_id)

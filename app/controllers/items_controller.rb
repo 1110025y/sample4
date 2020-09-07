@@ -83,7 +83,8 @@ class ItemsController < ApplicationController
     if current_user.address.present?
       @address = current_user.address
     else
-      redirect_to user_path(:id), alert: "Please register your address！"
+      flash[:alert] = "Please register your address！"
+      redirect_to user_path(:id)
     end
   end
 

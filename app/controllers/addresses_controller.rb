@@ -15,6 +15,7 @@ class AddressesController < ApplicationController
   def edit
     @address = current_user.address
     if @address.blank?
+      flash[:alert] = "Please register your address！"
       redirect_to action: "new"
     end
   end

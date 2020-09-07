@@ -22,7 +22,7 @@
       .message-image
         %img{:src => "/assets/smartphone_img01.jpg", width:"400", height:"275", class: "message-image--pic"}/
   .contents-items
-    %p{:style => "font-size: 20px; font-weight: bold; "} 新着アイテム
+    %p{:style => "font-size: 20px; font-weight: bold;"} 新着アイテム
     .items-separator
     .itemsNew
       - @items.each_with_index do |item,i|
@@ -33,10 +33,10 @@
                 .itemsNew__content__box--image
                   %a{:href => item_path(item.id)}
                     = image_tag (item.images[0].item_image.url), size: "205x240"
-                .itemsNew__content__box--details{"data-index" => "#{i}"}
                   %a{:href => item_path(item.id), class: "itemsNew-link"}
-                    .hidden_field
-                      SOLD OUT
+                    .itemsNew_photo__sold
+                      .itemsNew_photo__sold__inner
+                        SOLD OUT
                 
                   
         - else

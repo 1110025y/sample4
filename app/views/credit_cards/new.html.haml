@@ -4,6 +4,7 @@
     = render "side-bar"
     .creditNew
       %p.creditNew--Title クレジットカード情報入力
+      = render "flash-messages"
       .creditNew--list
         = form_tag(credit_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
           .fields

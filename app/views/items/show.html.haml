@@ -20,11 +20,20 @@
       .showMde--box
         .showMde--left
           .itemImage--main
-            - @item.images.each_with_index do |image, index|
-              - if index == 0
-                .itemMain-images{"data-index" => "#{index}"}
-                  = image_tag image.item_image.url, :width =>'500px', :height =>'540px', class: "main__image"
-              - else
+            - if @item.buyer_id.present?
+              - @item.images.each_with_index do |image, index|
+                - if index == 0
+                  .itemMain-images{"data-index" => "#{index}"}
+                    = image_tag image.item_image.url, :width =>'500px', :height =>'540px', class: "main__image"
+                  .itemMain_photo-sold
+                    .itemMain_photo-sold__inner
+                      SOLD OUT
+            - else
+              - @item.images.each_with_index do |image, index|
+                - if index == 0
+                  .itemMain-images{"data-index" => "#{index}"}
+                    = image_tag image.item_image.url, :width =>'500px', :height =>'540px', class: "main__image"
+              
           .itemImage--sub
             - @item.images.each_with_index do |image, index|
               - if image.persisted?
@@ -108,7 +117,7 @@
             - else
               %p.login-caution ※ログインすると質問できるようになります。
               = link_to "ログイン", user_session_path, method: :post, class: "comment-box_login"
-        %a.backBtn{:href => "/items"} トップページに戻る
+        %a.backBtn{:href => "/items"} トップページにもどる
   .footer
     = render "footer-bottom"
   

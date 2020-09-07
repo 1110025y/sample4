@@ -28,6 +28,7 @@ class UsersController < ApplicationController
 
   def purchaseGoods
     @items = Item.all
+    # @buyer = Item.where(buyer_id:current_user.id)
   end
 
   def commentGoods
