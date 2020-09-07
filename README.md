@@ -152,6 +152,7 @@ Rails 6.0.3.2
 - belongs_to_active_hash :delivery_fee
 - belongs_to_active_hash :status
 
+- has_many :comments
 - has_many :images
 - accepts_nested_attributes_for :images, allow_destroy: true
 - has_many :images, dependent: :destroy
