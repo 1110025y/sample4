@@ -21,7 +21,7 @@
 # Features
 このツールは、バイク用品のみの取り扱いに限ります。<br>
 そうする事で、同じような商品が集まり、価格競争が起こればバイク用品を<br>
-安く購入出来るサイトして強みを得られる為です
+安く購入出来るサイトして強みを得られる為です。
 <br>
 <br>
 <br>
@@ -39,8 +39,17 @@ FacebookやTwitterのアカウントからログイン出来る機能や、<br>
 # Demo
 ![Shimokita.php](https://i.gyazo.com/94df8b1a299ba3bfb1fc46617b4ef156.gif)
 <br>
+<br>
 
-![Shimokita.php](https://i.gyazo.com/27fe61a6bb37d122851686d3a107eb4b.gif)
+![Shimokita.php](https://i.gyazo.com/a3ae909b098bb0932f95890d6b54a7fe.gif)
+<br>
+<br>
+
+![Shimokita.php](https://i.gyazo.com/dc8bedcff3038f771f3fb9cc467d8c56.gif)
+<br>
+<br>
+
+![Shimokita.php](https://i.gyazo.com/ee58a0cfa5f346c45bb1bf0cb6f6b408.gif)
 <br>
 <br>
 <br>
