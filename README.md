@@ -2,7 +2,7 @@
 
 # 「アプリ名：Rider’s Garage」
 このツールは、バイクパーツ・ウェアを売買できるフリマアプリ。<br>
-![Shimokita.php](https://i.gyazo.com/18f8ab17dbdf1311194687f313c945ba.jpg)
+![Shimokita.php](https://i.gyazo.com/ac59c958ab77349220ecf35d9a7b5d8a.jpg)
 <br>
 <br>
 <br>
@@ -38,6 +38,8 @@ FacebookやTwitterのアカウントからログイン出来る機能や、<br>
 
 # Demo
 ![Shimokita.php](https://i.gyazo.com/94df8b1a299ba3bfb1fc46617b4ef156.gif)
+<br>
+
 ![Shimokita.php](https://i.gyazo.com/27fe61a6bb37d122851686d3a107eb4b.gif)
 <br>
 <br>
