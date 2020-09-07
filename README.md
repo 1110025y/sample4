@@ -131,6 +131,9 @@ Rails 6.0.3.2
 
 ### Association
 - has_many: items
+- has_many :comments
+- has_one :address, dependent: :destroy
+- has_one :credit_card, dependent: :destroy
 
 
 
@@ -228,3 +231,48 @@ Rails 6.0.3.2
 
 ### Association
 - has_many: items
+
+
+
+# credit_cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
+
+### Association
+- belongs_to :user
+
+
+
+# commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false|
+|item_id|integer|null: false|
+|text|text|null: false|
+
+### Association
+- belongs_to :item
+- belongs_to :user
+
+
+
+# addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|postal_code|integer|null: false|
+|prefecture_id|string|null: false|
+|city|string|null: false|
+|house_number|string|null: false|
+|apartment|string|null: false|
+|phone_number|text|null: false|
+|user_id|integer||
+|contact|text||
+
+### Association
+- belongs_to :user
+
+- extend ActiveHash::Associations::ActiveRecordExtensions
+- belongs_to_active_hash :prefecture
