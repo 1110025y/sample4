@@ -44,10 +44,13 @@
             -if current_user.id == @item.user_id
               .emptyBox
             -else 
-              %a{:href => purchase_item_path(@item.id), class: "buy-btn--link"}
-                .buy-btn
-                  %i.fas.fa-shopping-cart
-                  %p.btn-text 購入する
+              - if @item.buyer_id.present?
+                .emptyBox
+              -else 
+                %a{:href => purchase_item_path(@item.id), class: "buy-btn--link"}
+                  .buy-btn
+                    %i.fas.fa-shopping-cart
+                    %p.btn-text 購入する
           - else
             .emptyBox
           .item-introduction
