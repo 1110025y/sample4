@@ -164,6 +164,7 @@
     background-color: #EE0000;
     color: #FFF;
     border: 1px solid #DDDDDD;
+    padding-right: 10px;
   }
   #card_token:hover{
     opacity: 0.5 ;
@@ -171,7 +172,9 @@
   }
   .back-btn{
     display: block;
-    margin-left: 47%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 7%;
     margin-top: 25px;
     text-decoration: none;
     color: #00BFFF;
@@ -258,8 +261,10 @@
     }
     .back-btn{
       display: block;
-      margin-left: 47%;
       margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 7%;
       text-decoration: none;
       color: #00BFFF;
     }
