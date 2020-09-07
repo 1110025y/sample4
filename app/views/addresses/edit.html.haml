@@ -50,6 +50,7 @@
           .box
           .form-post
             = f.submit "変更する", class: "Form-send"
+          = link_to "もどる", user_path(:id), class: "back-btn"
   .contents__box
   .footer
   = render "footer-bottom"

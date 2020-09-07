@@ -4,6 +4,7 @@
 
 
 // credit_card/newのscss
+
 .creditNew{
   width: 60%;
   height: 100%;
@@ -177,6 +178,93 @@
   }
   .back-btn:hover{
     opacity: 0.5 ;
-    color: #FF00FF;
+  }
+}
+
+
+
+// credit_card/showのscss
+
+.creditShow{
+  width: 60%;
+  height: 100%;
+  padding-top: 30px;
+  &--Title{
+    font-size: 19px;
+    font-weight: bold;
+    opacity: 0.7;
+    margin: 0 0 20px 7px;
+  }
+  &--list{
+    width: 70%;
+    height: 100%;
+    background-color: white;
+    border: 1px solid #DDDDDD;
+    padding: 40px 0 60px 0;
+    border-radius: 5px;
+    .numbers_title{
+      font-size: 21px;
+      color: #777777;
+      font-weight: bold;
+      width: 17%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .numbers_info{
+      font-size: 23px;
+      color: #777777;
+      font-weight: bold;
+      width: 27%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+    }
+    .date_title{
+      font-size: 21px;
+      color: #777777;
+      font-weight: bold;
+      width: 16%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+    }
+    .date_info{
+      font-size: 23px;
+      color: #777777;
+      font-weight: bold;
+      width: 16%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+    }
+    .destroy-btn{
+      display: block;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 19px;
+      opacity: 0.9;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 40px;
+      width: 23%;
+      height: 50px;
+      color: #fff;
+      background-color: #FF0066;
+      border-radius: 5px 5px 5px 5px / 5px 5px 5px 5px;
+      padding: 10px 0 0 48px;
+    }
+    .destroy-btn:hover{
+      opacity: 0.5 ;
+    }
+    .back-btn{
+      display: block;
+      margin-left: 47%;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #00BFFF;
+    }
+    .back-btn:hover{
+      opacity: 0.5 ;
+    }
   }
 }

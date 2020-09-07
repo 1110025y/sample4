@@ -51,7 +51,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 70px;
     background-color: #FFFFFF;
     border-radius: 2%;
     box-shadow: 3px 3px 3px 3px #999999;
@@ -61,8 +61,10 @@
       border-bottom: 1px solid #DDDDDD;
       .title-mge{
         font-size: 30px;
+        font-weight: bold;
         color: #777777;
-        width: 25%;
+        opacity: 0.8;
+        width: 23%;
         margin-left: auto;
         margin-right: auto;
         padding-top: 25px;
@@ -147,7 +149,7 @@
         color: #777777;
         font-family: ArialMT,sans-serif;
         font-weight: bold;
-        width: 20%;
+        width: 25%;
         margin-left: auto;
         margin-right: auto;
       }
@@ -184,39 +186,87 @@
     .purchase-credit{
       width: 100%;
       padding: 43px 0 0 50px;
-    }
-    .purchase-attention{
-      width: 100%;
-      padding: 43px 0 0 50px;
-      .pay-btn-link{
-        text-decoration: none;
-        .pay-btn{
-          width: 400px;
-          height: 55px;
-          background-color: #FF0066;
-          border-radius: 5px 5px 5px 5px / 5px 5px 5px 5px;
-          padding: 10px 0 0 20%;
-          margin-top: 7%;
-          display: flex;
-          .fa-credit-card{
-            color: #fff;
-            font-size: 23px;
-            opacity: 0.9;
-            padding-top: 6px;
-            display: block;
-          }
-          .btn-text{
-            font-size: 23px;
-            font-weight: bold;
-            margin-left: 15px;
-            color: #fff;
-          }
+      .credit-title{
+        font-size: 20px;
+        color: #777777;
+        font-family: ArialMT,sans-serif;
+        font-weight: bold;
+        width: 25%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .credit-numbers{
+        display: flex;
+        width: 55%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 33px;
+        &__title{
+          font-size: 21px;
+          color: #777777;
+          font-family: ArialMT,sans-serif;
+          margin-right: 30px;
         }
-        .pay-btn:hover {
-          opacity: 0.5 ;
-          background-color: #FF66FF;
+        &__info{
+          font-size: 22px;
+          color: #777777;
+          font-family: ArialMT,sans-serif;
+          padding-top: 3px;
         }
       }
+      .credit-date{
+        display: flex;
+        width: 55%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        &__title{
+          font-size: 21px;
+          color: #777777;
+          font-family: ArialMT,sans-serif;
+          margin-right: 158px;
+        }
+        &__info{
+          font-size: 21px;
+          color: #777777;
+          font-family: ArialMT,sans-serif;
+          padding-top: 3px;
+        }
+      }
+    }
+    .pay-btn{
+      margin-top: 30px;
+      display: block;
+      text-decoration: none;
+      width: 400px;
+      height: 50px;
+      color: #fff;
+      background-color: #FF0066;
+      border-radius: 5px 5px 5px 5px / 5px 5px 5px 5px;
+      font-size: 22px;
+      font-weight: bold;
+      opacity: 0.9;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 60px;
+      padding: 10px 0 0 22%;
+    }
+    .pay-btn:hover{
+      opacity: 0.5 ;
+      background-color: #FF66FF;
+    }
+    .backBtn{
+      text-decoration: none;
+      display: block;
+      color: #00BFFF;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      width: 9%;
+    }
+    .backBtn:hover{
+      opacity: 0.5 ;
+      color: #00BFFF;
     }
   }
 }

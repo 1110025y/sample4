@@ -2,16 +2,20 @@
   = render "header-top"
   .contents__body
     = render "side-bar"
-    .show-contents
-      %label 登録クレジットカード情報
-      %br
-      = "**** **** **** " + @default_card_information.last4
-      %br
-      - exp_month = @default_card_information.exp_month.to_s
-      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-      = exp_month + " / " + exp_year
-      = link_to '削除する', credit_card_path, method: :delete, class: "destroy-function-link-btn"
-      
+    .creditShow
+      %p.creditShow--Title 登録クレジットカード情報
+      .creditShow--list
+        %p.numbers_title カード番号
+        .numbers_info
+          = "**** **** **** " + @default_card_information.last4
+        %br
+        %p.date_title 有効期限
+        .date_info
+          - exp_month = @default_card_information.exp_month.to_s
+          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          = exp_month + " / " + exp_year
+        = link_to '削除する', credit_card_path, method: :delete, class: "destroy-btn"
+        = link_to "もどる", user_path(:id), class: "back-btn"
   .contents__box
   .footer
   = render "footer-bottom"

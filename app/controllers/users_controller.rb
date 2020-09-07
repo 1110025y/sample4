@@ -19,10 +19,21 @@ class UsersController < ApplicationController
   def exhibitedShow
     @items = Item.all
     @nickname = current_user.nickname
+    
   end
 
   def setUpShow
     @address = current_user.address
+  end
+
+  def purchaseGoods
+    @items = Item.all
+    # @buyer = Item.where(buyer_id:current_user.id)
+  end
+
+  def commentGoods
+    @items = Item.all
+    @comments = Comment.all
   end
 
   # private
