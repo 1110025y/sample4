@@ -6,7 +6,7 @@ class CreditCardsController < ApplicationController
   end
 
   def create
-    Payjp.api_key = "sk_test_eecf4c9853b6665b3a9699a6"
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
       redirect_to action: "new" # トークンが取得出来てなければループ
     else
@@ -31,7 +31,7 @@ class CreditCardsController < ApplicationController
       flash[:notice] = "Please credit card registration！"
       redirect_to action: "new"
     else
-      Payjp.api_key = "sk_test_eecf4c9853b6665b3a9699a6"
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
     end
@@ -43,7 +43,7 @@ class CreditCardsController < ApplicationController
     if @card.blank?
       redirect_to action: "show"
     else
-      Payjp.api_key = "sk_test_eecf4c9853b6665b3a9699a6"
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
       @card.delete
