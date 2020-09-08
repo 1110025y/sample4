@@ -123,7 +123,6 @@ Rails 6.0.3.2
 |email|string|null: false, unique:true|
 |password|string|null: false|
 |password_confirmation|string||
-
 |first＿name|string|null: false|
 |family_name|string|null: false|
 |first＿name_kana|string|null: false|
@@ -134,8 +133,8 @@ Rails 6.0.3.2
 - has_many :comments
 - has_one :address, dependent: :destroy
 - has_one :credit_card, dependent: :destroy
-
-
+<br>
+<br>
 
 ## itemsテーブル
 |Column|Type|Options|
@@ -168,9 +167,8 @@ Rails 6.0.3.2
 - has_many :images
 - accepts_nested_attributes_for :images, allow_destroy: true
 - has_many :images, dependent: :destroy
-
-
-
+<br>
+<br>
 
 # categoriesテーブル
 |Column|Type|Options|
@@ -180,9 +178,8 @@ Rails 6.0.3.2
 
 ### Association
 - has_many: items
-
-
-
+<br>
+<br>
 
 # imagesテーブル
 |Column|Type|Options|
@@ -192,8 +189,8 @@ Rails 6.0.3.2
 
 ### Association
 - belongs_to : item
-
-
+<br>
+<br>
 
 # shippingdatesテーブル
 |Column|Type|Options|
@@ -202,8 +199,8 @@ Rails 6.0.3.2
 
 ### Association
 - has_many: items
-
-
+<br>
+<br>
 
 # delivery_feesテーブル
 |Column|Type|Options|
@@ -232,8 +229,8 @@ Rails 6.0.3.2
 
 ### Association
 - has_many: items
-
-
+<br>
+<br>
 
 # credit_cardsテーブル
 |Column|Type|Options|
@@ -244,8 +241,8 @@ Rails 6.0.3.2
 
 ### Association
 - belongs_to :user
-
-
+<br>
+<br>
 
 # commentsテーブル
 |Column|Type|Options|
@@ -257,8 +254,8 @@ Rails 6.0.3.2
 ### Association
 - belongs_to :item
 - belongs_to :user
-
-
+<br>
+<br>
 
 # addressesテーブル
 |Column|Type|Options|
