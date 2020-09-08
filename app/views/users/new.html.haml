@@ -21,10 +21,10 @@
             = icon('far', 'envelope', class: "icon")
             メールアドレスで登録する
           %p.section-text-b SNSアカウントで登録/お持ちのアカウントで登録
-          = link_to "#", class: "btn-GG" do
+          = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "btn-GG" do
             = icon('fab', 'google', class: "icon")
             Googleで登録する
-          = link_to "#", class: "btn-FB" do
+          = link_to user_facebook_omniauth_authorize_path, method: :post, class: "btn-FB" do
             = icon('fab', 'facebook-square', class: "icon")
             Facebookで登録する
           = link_to "#", class: "btn-Ap" do
