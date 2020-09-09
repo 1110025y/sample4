@@ -71,7 +71,7 @@ class ItemsController < ApplicationController
     @first_name = current_user.first_name
     @item = Item.find(params[:id])
     @card = CreditCard.find_by(user_id: current_user.id)
-    Payjp.api_key = "sk_test_eecf4c9853b6665b3a9699a6"
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     if @card.blank?
       flash[:alert] = 'Please register your card！'
       redirect_to user_path(:id) and return
@@ -92,7 +92,7 @@ class ItemsController < ApplicationController
   def pay
     @item = Item.find(params[:id])
     @card = CreditCard.find_by(user_id: current_user.id)
-    Payjp.api_key = "sk_test_eecf4c9853b6665b3a9699a6"
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     
     charge = Payjp::Charge.create(
       :amount => @item.price,
