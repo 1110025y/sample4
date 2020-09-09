@@ -3,9 +3,9 @@
   .contents-body-index
     .body-index
       .body-index--box#slide
-        -# = image_tag src= "material/d18b0b470e4.jpg", width:"1790", height:"387"
-        -# = image_tag src= "material/big_main.jpg", width:"1790", height:"387"
-        -# = image_tag src= "material/shopimg-1.jpg", width:"1790", height:"387"
+        %img{:src => "material/d18b0b470e4.jpg", width:"1790", height:"387"}/
+        %img{:src => "material/big_main.jpg", width:"1790", height:"387"}/
+        %img{:src => "material/shopimg-1.jpg", width:"1790", height:"387"}/
     .body-message
       .message__box
         .message__box--from
@@ -18,9 +18,9 @@
               %a{:href => "https://itunes.apple.com/jp/app/instagram/id389801252?mt=8"}
                 %img{:alt => "AppStoreで入手", :height => "50", :src => "https://linkmaker.itunes.apple.com/assets/shared/badges/ja-jp/appstore-lrg.svg"}/
             .google-icon
-              -# = image_tag src= "material/google-play-badge.png", width:"200", height:"75"
+              %img{:src => "material/google-play-badge.png", width:"200", height:"75"}/
       .message-image
-        -# = image_tag src="material/smartphone_img01.jpg", width:"400", height:"275", class: "message-image--pic"
+        %img{:src => "/assets/smartphone_img01.jpg", width:"400", height:"275", class: "message-image--pic"}/
   .contents-items
     %p{:style => "font-size: 20px; font-weight: bold;"} 新着アイテム
     .items-separator
