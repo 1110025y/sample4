@@ -171,7 +171,8 @@ Rails 6.0.3.2
 <br>
 <br>
 
-# categoriesテーブル - 商品カテゴリ
+# categoriesテーブル
+### 商品カテゴリ
 |Column|Type|Options|
 |------|----|-------|
 |ancestry|string|null: false|
@@ -193,7 +194,8 @@ Rails 6.0.3.2
 <br>
 <br>
 
-# shippingdatesテーブル - 発送までの日数
+# shippingdatesテーブル
+### 発送までの日数
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -203,7 +205,8 @@ Rails 6.0.3.2
 <br>
 <br>
 
-# delivery_feesテーブル - 配送料の負担
+# delivery_feesテーブル
+### 配送料の負担
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -214,7 +217,8 @@ Rails 6.0.3.2
 <br>
 
 
-# statusesテーブル #商品の状態
+# statusesテーブル
+### 商品の状態
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -225,7 +229,8 @@ Rails 6.0.3.2
 <br>
 
 
-# prefecturesテーブル  - 発送元の地域
+# prefecturesテーブル
+### 発送元の地域
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -235,7 +240,8 @@ Rails 6.0.3.2
 <br>
 <br>
 
-# credit_cardsテーブル - クレジットカード登録と決算
+# credit_cardsテーブル
+### クレジットカード登録と決算
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false|
@@ -247,7 +253,8 @@ Rails 6.0.3.2
 <br>
 <br>
 
-# commentsテーブル - 商品への質問コメント
+# commentsテーブル
+### 商品への質問コメント
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false|
@@ -260,7 +267,8 @@ Rails 6.0.3.2
 <br>
 <br>
 
-# addressesテーブル - 登録者の住所登録
+# addressesテーブル
+### 登録者の住所登録
 |Column|Type|Options|
 |------|----|-------|
 |postal_code|integer|null: false|
@@ -280,7 +288,8 @@ Rails 6.0.3.2
 <br>
 <br>
 
-# sns_credentials - SNS認証
+# sns_credentials
+### SNS認証
 |Column|Type|Options|
 |------|----|-------|
 |provider|string|null: false|
