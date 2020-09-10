@@ -20,7 +20,7 @@
             .google-icon
               %img{:src => "/assets/google-play-badge.png", width:"200", height:"75"}/
       .message-image
-        %img{:src => "/assets/smartphone_img01.jpg", width:"400", height:"275", class: "message-image--pic"}/
+        = image_tag(image_path('material/smartphone_img01.jpg'), width:"400", height:"275", class: "message-image--pic")
   .contents-items
     %p{:style => "font-size: 20px; font-weight: bold;"} 新着アイテム
     .items-separator
