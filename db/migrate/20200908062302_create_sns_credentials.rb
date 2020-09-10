@@ -5,7 +5,6 @@ class CreateSnsCredentials < ActiveRecord::Migration[6.0]
       t.string :uid
       t.references :user, foreign_key: true
 
-
       t.timestamps
     end
   end
