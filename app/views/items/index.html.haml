@@ -3,9 +3,10 @@
   .contents-body-index
     .body-index
       .body-index--box#slide
-        %img{:src => "/assets/d18b0b470e4.jpg", width:"1790", height:"387"}/
-        %img{:src => "/assets/big_main.jpg", width:"1790", height:"387"}/
-        %img{:src => "/assets/shopimg-1.jpg", width:"1790", height:"387"}/
+        = image_tag(image_path('material/d18b0b470e4.jpg'), width:"1790", height:"387")
+        = image_tag(image_path('material/big_main.jpg'), width:"1790", height:"387")
+        = image_tag(image_path('material/shopimg-1.jpg'), width:"1790", height:"387")
+
     .body-message
       .message__box
         .message__box--from
