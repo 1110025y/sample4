@@ -288,7 +288,8 @@ Rails 6.0.3.2
 <br>
 <br>
 
-# sns_credentials ### SNS認証
+# sns_credentials 
+- SNS認証
 |Column|Type|Options|
 |------|----|-------|
 |provider|string|null: false|
