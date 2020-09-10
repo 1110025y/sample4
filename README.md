@@ -133,6 +133,7 @@ Rails 6.0.3.2
 - has_many :comments
 - has_one :address, dependent: :destroy
 - has_one :credit_card, dependent: :destroy
+- has_many :sns_credentials
 <br>
 <br>
 
@@ -170,7 +171,7 @@ Rails 6.0.3.2
 <br>
 <br>
 
-# categoriesテーブル
+# categoriesテーブル - 商品カテゴリ
 |Column|Type|Options|
 |------|----|-------|
 |ancestry|string|null: false|
@@ -192,7 +193,7 @@ Rails 6.0.3.2
 <br>
 <br>
 
-# shippingdatesテーブル
+# shippingdatesテーブル - 発送までの日数
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -202,27 +203,7 @@ Rails 6.0.3.2
 <br>
 <br>
 
-# delivery_feesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-- has_many: items
-
-
-
-# statusesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-- has_many: items
-
-
-
-# prefecturesテーブル
+# delivery_feesテーブル - 配送料の負担
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -232,7 +213,29 @@ Rails 6.0.3.2
 <br>
 <br>
 
-# credit_cardsテーブル
+
+# statusesテーブル #商品の状態
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- has_many: items
+<br>
+<br>
+
+
+# prefecturesテーブル  - 発送元の地域
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- has_many: items
+<br>
+<br>
+
+# credit_cardsテーブル - クレジットカード登録と決算
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false|
@@ -244,7 +247,7 @@ Rails 6.0.3.2
 <br>
 <br>
 
-# commentsテーブル
+# commentsテーブル - 商品への質問コメント
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false|
@@ -257,7 +260,7 @@ Rails 6.0.3.2
 <br>
 <br>
 
-# addressesテーブル
+# addressesテーブル - 登録者の住所登録
 |Column|Type|Options|
 |------|----|-------|
 |postal_code|integer|null: false|
@@ -274,3 +277,16 @@ Rails 6.0.3.2
 
 - extend ActiveHash::Associations::ActiveRecordExtensions
 - belongs_to_active_hash :prefecture
+<br>
+<br>
+
+# sns_credentials - SNS認証
+|Column|Type|Options|
+|------|----|-------|
+|provider|string|null: false|
+|uid|string|null: false|
+|user|references|null: false, foreign_key: true|
+
+
+### Association
+- belongs_to :user, optional: true
