@@ -6,8 +6,7 @@
 <br>
 <br>
 
-
-
+![Shimokita.php](https://i.gyazo.com/d0a3d9568d0fbf5919e927a40c7c925c.gif)
 <br>
 <br>
 <br>
@@ -42,10 +41,6 @@ FacebookやTwitterのアカウントからログイン出来る機能や、<br>
 <br>
 
 # Demo
-![Shimokita.php](https://i.gyazo.com/ef060fe446d4f4d0e326461b83eeccfa.gif)
-<br>
-<br>
-
 ![Shimokita.php](https://i.gyazo.com/94df8b1a299ba3bfb1fc46617b4ef156.gif)
 <br>
 <br>
