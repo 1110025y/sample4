@@ -226,7 +226,6 @@ Rails 6.0.3.2
 
 
 # prefecturesテーブル
-### 発送元の地域
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
