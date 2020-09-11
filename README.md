@@ -6,7 +6,7 @@
 <br>
 <br>
 
-![Shimokita.php](https://i.gyazo.com/d0a3d9568d0fbf5919e927a40c7c925c.jpg)
+![Shimokita.php](https://i.gyazo.com/d0a3d9568d0fbf5919e927a40c7c925c.gif)
 <br>
 <br>
 <br>
