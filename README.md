@@ -6,7 +6,7 @@
 <br>
 <br>
 
-![Shi](https://i.gyazo.com/814ae665b55312e4f227911616e944dd.gif)
+![Shi](https://i.gyazo.com/76178d87660f2a20665c1a7d073817d2.jpg)
 <br>
 <br>
 <br>
