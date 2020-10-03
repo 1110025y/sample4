@@ -5,7 +5,8 @@
     .box
       %p.box__letter お知らせ
     .box
-      %p.box__letter いいねした商品
+      = link_to favoriteGoods_user_path(:id) , class: "link-btn" do
+        %p.link-letter いいねした商品
   .contents__body__side--2
     .heading
       %p.menu 商品を出品する

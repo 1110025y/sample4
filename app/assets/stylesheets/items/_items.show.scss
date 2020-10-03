@@ -84,6 +84,48 @@
         .image__list:hover{
           border: 2px solid #FF66FF;
         }
+        .itemFavorite{
+          margin-top: 30px;
+          .favorited-link{
+            text-decoration: none;
+            color: #FF0066;
+            
+            .favorited-btn{
+              display: flex;
+              width: 210px;
+              height: 50px;
+              border: 1px solid #FF0066;
+              border-radius: 5px;
+              padding: 12px 0 0 55px;
+              .fa-heart{
+                margin: 4px 10px 0 0;
+              }
+              .btn-text{
+                font-weight: bold;
+              }
+            }
+          }
+          .favorite-link{
+            text-decoration: none;
+            color: #FF0066;
+            
+            .favorite-btn{
+              display: flex;
+              width: 210px;
+              height: 50px;
+              border: 1px solid #FF0066;
+              border-radius: 5px;
+              padding: 12px 0 0 55px;
+              .fa-heart{
+                margin: 4px 10px 0 0;
+              }
+              .btn-text{
+                font-weight: bold;
+              }
+            }
+          }
+        }
+
       }
       .showMde--right{
         width: 50%;
