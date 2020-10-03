@@ -84,48 +84,78 @@
         .image__list:hover{
           border: 2px solid #FF66FF;
         }
-        .itemFavorite{
-          margin-top: 30px;
-          .favorited-link{
-            text-decoration: none;
-            color: #FF0066;
-            
-            .favorited-btn{
-              display: flex;
-              width: 210px;
-              height: 50px;
-              border: 1px solid #FF0066;
-              border-radius: 5px;
-              padding: 12px 0 0 55px;
-              .fa-heart{
-                margin: 4px 10px 0 0;
+        .itemOption{
+          display: flex;
+          .itemFavorite{
+            margin: 35px 15px 0 0;
+            .favorited-link{
+              text-decoration: none;
+              color: #FF0066;
+              .favorited-btn{
+                display: flex;
+                width: 240px;
+                height: 50px;
+                border: 1px solid #FF0066;
+                border-radius: 5px;
+                padding: 12px 0 0 57px;
+                .fa-heart{
+                  margin: 4px 5px 0 0;
+                }
+                .btn-text{
+                  font-weight: bold;
+                }
+                .like-counts{
+                  font-weight: bold;
+                  margin-left: 10px;
+                }
               }
-              .btn-text{
-                font-weight: bold;
+            }
+            .favorite-link{
+              text-decoration: none;
+              color: #FF0066;
+              .favorite-btn{
+                display: flex;
+                width: 240px;
+                height: 50px;
+                border: 1px solid #FF0066;
+                border-radius: 5px;
+                padding: 12px 0 0 57px;
+                .fa-heart{
+                  margin: 4px 5px 0 0;
+                }
+                .btn-text{
+                  font-weight: bold;
+                }
+                .like-counts{
+                  font-weight: bold;
+                  margin-left: 10px;
+                }
               }
             }
           }
-          .favorite-link{
-            text-decoration: none;
-            color: #FF0066;
-            
-            .favorite-btn{
+          .itemComment{
+            margin-top: 35px;
+            .comment-counts{
               display: flex;
-              width: 210px;
+              width: 240px;
               height: 50px;
-              border: 1px solid #FF0066;
+              border: 1px solid #999999;
+              color: #999999;
               border-radius: 5px;
-              padding: 12px 0 0 55px;
-              .fa-heart{
-                margin: 4px 10px 0 0;
+              padding: 12px 0 0 53px;
+              .fa-comment{
+                margin: 4px 3px 0 0;
               }
-              .btn-text{
+              .text{
                 font-weight: bold;
+              }
+              .counts{
+                font-weight: bold;
+                margin-left: 7px;
               }
             }
           }
         }
-
       }
       .showMde--right{
         width: 50%;
@@ -377,6 +407,3 @@
 .delete-btn:hover {
   opacity: 0.5 ;
 }
-
-
-
