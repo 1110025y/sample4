@@ -36,6 +36,12 @@ class UsersController < ApplicationController
     @comments = Comment.all
   end
 
+  def favoriteGoods
+    @items = Item.all
+    @favorites = Favorite.all
+  end
+
+
   # private
   # def user_registration_params
   #   params.require(:user).permit(:nickname, :family_name, :first_name, :family_name_kana, :first_name_kana)

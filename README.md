@@ -138,6 +138,8 @@ Rails 6.0.3.2
 - has_one :address, dependent: :destroy
 - has_one :credit_card, dependent: :destroy
 - has_many :sns_credentials
+- has_many :favorites, dependent: :destroy
+- has_many :items, through: :favorites
 <br>
 <br>
 
@@ -172,6 +174,8 @@ Rails 6.0.3.2
 - has_many :images
 - accepts_nested_attributes_for :images, allow_destroy: true
 - has_many :images, dependent: :destroy
+- has_many :favorites, dependent: :destroy
+- has_many :users, through: :favorites
 <br>
 <br>
 
@@ -291,6 +295,19 @@ Rails 6.0.3.2
 |uid|string|null: false|
 |user|references|null: false, foreign_key: true|
 
-
 ### Association
 - belongs_to :user, optional: true
+<br>
+<br>
+
+# favorites 
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false|
+|item_id|integer|null: false|
+
+### Association
+- belongs_to :user
+- belongs_to :item
+
+- validates_uniqueness_of :item_id, scope: :user_id

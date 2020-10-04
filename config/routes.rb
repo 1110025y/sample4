@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   root to: 'items#index'
   resources :items do
     resources :comments, only: :create
+    resources :favorites, only: [:create, :destroy]
+
     collection do
       get 'category/get_category_children', to: 'items#get_category_children', defaults: { format: 'json' }
     end
@@ -17,17 +19,17 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-    member do
+    member do #idを指定して特定のページにいく必要がある
       get 'exhibitedShow'
       get 'purchaseGoods'
       get 'commentGoods'
+      get 'favoriteGoods'
     end
-    collection do
+    collection do #idを指定して特定のページにいく必要がない
       get 'setUpShow'
     end
   end
 
   resources :addresses, only: [:new, :create, :edit, :update]
   resources :credit_cards, only:[:index, :new, :create, :destroy, :show]
-  
 end

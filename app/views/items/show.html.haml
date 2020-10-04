@@ -39,6 +39,37 @@
               - if image.persisted?
                 .itemSub-images{"data-index" => "#{index}"}
                   = image_tag image.item_image.url, :width =>'115px', :height =>'120px', class: "image__list"
+          .itemOption
+            .itemFavorite
+              - if user_signed_in?
+                - if current_user.favorites.find_by(item_id: @item.id)
+                  = link_to item_favorite_path(@item), method: :delete, class: "favorited-link" do
+                    .favorited-btn
+                      %i.fas.fa-heart
+                      %p.btn-text いいね
+                      .like-counts
+                        = "#{@item.favorites.count}件"
+                -else
+                  = link_to item_favorites_path(@item), method: :post, class: "favorite-link" do
+                    .favorite-btn
+                      %i.far.fa-heart
+                      %p.btn-text いいね
+                      .like-counts
+                        = "#{@item.favorites.count}件"
+              - else
+                = link_to user_session_path , method: :post, class: "favorite-link" do
+                  .favorite-btn
+                    %i.far.fa-heart
+                    %p.btn-text いいね
+                    .like-counts
+                      = "#{@item.favorites.count}件"
+            .itemComment
+              .comment-counts
+                %i.far.fa-comment
+                %p.text コメント
+                .counts
+                  = "#{@item.comments.count}件"
+
         .showMde--right
           %h1.item-name
             = @item.name
