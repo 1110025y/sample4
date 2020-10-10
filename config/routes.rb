@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
     collection do
       get 'category/get_category_children', to: 'items#get_category_children', defaults: { format: 'json' }
+      get 'list'
     end
     member do
       get 'purchase'

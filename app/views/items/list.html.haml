@@ -1,0 +1,13 @@
+- @category.each do |item,i|
+  - if item.images.present?
+    .exhibitedGoods__box
+      .exhibitedGoods--image
+        %a{:href => item_path(item.id)}
+          = image_tag (item.images[0].item_image.url), size: "205x230"
+      .exhibitedGoods--details{"data-index" => "#{i}"}
+        %a{:href => item_path(item.id), class: "exhibitedGoods--link"}
+          .text_field
+            .iName
+              = "#{item.name}"
+            .iPrice
+              = "¥#{item.price}"

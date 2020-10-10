@@ -104,6 +104,10 @@ class ItemsController < ApplicationController
     redirect_to user_path(:id), notice: 'Purchase of the product is completed！'
   end
 
+  def list
+    @items = Item.all
+  end
+
   private
 
   def item_params

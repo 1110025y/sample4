@@ -4,11 +4,11 @@
     %ul.category__parent
       - @parents.each do |parent|
         .category-box{id: "parent_category#{parent.id}"}
-          = link_to "#{parent.name}", "#", class: "parent_category",id: "parent#{parent.id}"
+          = link_to "#{parent.name}", list_items_path(category_id:parent.id), class: "parent_category",id: "parent#{parent.id}"
           %i.fas.fa-angle-down
         %ul.category__child{id: "parent_list#{parent.id}"}
           - parent.children.each do |child|
             .category-box{id: "parent_category#{child.id}"}
-              = link_to "#{child.name}", "#", class: "parent_category",id: "child#{child.id}"
+              = link_to "#{child.name}", list_items_path(category_id:child.id), class: "parent_category",id: "child#{child.id}"
               %i.fas.fa-angle-right
         .paragraph
