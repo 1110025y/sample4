@@ -111,4 +111,24 @@ $(document).on('turbolinks:load', function(){
     });
   });
 
+
+  //個別ページのカテゴリ一覧
+  $(function(){
+    $('#category1').click(function(){
+      $("#list1").slideToggle('1000');
+    });
+    $('#parent_category13').click( function(){
+      $("#parent_list13").slideToggle('1000');
+    });
+    $( '#parent_category27').click(function(){
+      $("#parent_list27").slideToggle('1000');
+    });
+    $( '#parent_category42').click(function(){
+      $("#parent_list42").slideToggle('1000');
+    });
+    $('#parent_category50').click(function(){
+      $("#parent_list50").slideToggle('slow');
+    });
+  });
+
 });

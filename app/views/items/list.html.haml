@@ -1,13 +1,37 @@
-- @category.each do |item,i|
-  - if item.images.present?
-    .exhibitedGoods__box
-      .exhibitedGoods--image
-        %a{:href => item_path(item.id)}
-          = image_tag (item.images[0].item_image.url), size: "205x230"
-      .exhibitedGoods--details{"data-index" => "#{i}"}
-        %a{:href => item_path(item.id), class: "exhibitedGoods--link"}
-          .text_field
-            .iName
-              = "#{item.name}"
-            .iPrice
-              = "¥#{item.price}"
+.contents
+  = render "header-top"
+.contents__body
+  .contents__body--side
+    .side-category カテゴリから探す
+    %ul.category__parent
+      - @parents.each do |parent|
+        .category-box{id: "category#{parent.id}"}
+          %p.parent_category{id: "parent#{parent.id}"}
+            = "#{parent.name}"
+          %i.fas.fa-angle-down
+        %ul.category__child{id: "list#{parent.id}"}
+          - parent.children.each do |child|
+            .category-box{id: "category#{child.id}"}
+              = link_to "#{child.name}", list_items_path(category_id:child.id), class: "parent_category",id: "child#{child.id}"
+              %i.fas.fa-angle-right
+        .paragraph
+  .contents__body--list
+    -if @items.present?
+      - @items.each do |item,i|
+        - if item.images.present?
+          .exhibitedGoods__box
+            .exhibitedGoods--image
+              %a{:href => item_path(item.id)}
+                = image_tag (item.images[0].item_image.url), size: "205x230"
+            .exhibitedGoods--details{"data-index" => "#{i}"}
+              %a{:href => item_path(item.id), class: "exhibitedGoods--link"}
+                .text_field
+                  .iName
+                    = "#{item.name}"
+                  .iPrice
+                    = "¥#{item.price}"
+    -else
+      .notfind_text 該当商品が見つかりません
+.neck
+.footer
+  = render "footer-bottom"

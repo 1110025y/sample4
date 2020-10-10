@@ -48,6 +48,7 @@ class ItemsController < ApplicationController
     @user = User.find(@item.user_id)
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
+    
   end
 
   def update
@@ -105,7 +106,8 @@ class ItemsController < ApplicationController
   end
 
   def list
-    @items = Item.all
+    @items = Item.where(category_id: params[:category_id])
+    @parents = Category.where(ancestry: nil)
   end
 
   private

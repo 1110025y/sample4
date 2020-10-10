@@ -4,7 +4,8 @@
     %ul.category__parent
       - @parents.each do |parent|
         .category-box{id: "parent_category#{parent.id}"}
-          = link_to "#{parent.name}", list_items_path(category_id:parent.id), class: "parent_category",id: "parent#{parent.id}"
+          %p.parent_category{id: "parent#{parent.id}"}
+            = "#{parent.name}"
           %i.fas.fa-angle-down
         %ul.category__child{id: "parent_list#{parent.id}"}
           - parent.children.each do |child|
