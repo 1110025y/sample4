@@ -2,7 +2,9 @@
   = render "header-top"
 .contents__body
   .contents__body--side
-    .side-category カテゴリから探す
+    .box
+      %i.fas.fa-list-ul
+      %p.side-category カテゴリから探す
     %ul.category__parent
       - @parents.each do |parent|
         .category-box{id: "category#{parent.id}"}
@@ -14,23 +16,42 @@
             .category-box{id: "category#{child.id}"}
               = link_to "#{child.name}", list_items_path(category_id:child.id), class: "parent_category",id: "child#{child.id}"
               %i.fas.fa-angle-right
+    .another-neck
   .contents__body--list
     -if @items.present?
-      - @items.each do |item,i|
-        - if item.images.present?
-          .exhibitedGoods__box
-            .exhibitedGoods--image
-              %a{:href => item_path(item.id)}
-                = image_tag (item.images[0].item_image.url), size: "205x230"
-            .exhibitedGoods--details{"data-index" => "#{i}"}
-              %a{:href => item_path(item.id), class: "exhibitedGoods--link"}
-                .text_field
-                  .iName
-                    = "#{item.name}"
-                  .iPrice
-                    = "¥#{item.price}"
+      %p.categoryName
+        = "#{@category.name}の商品一覧"
+      %ul.lists
+        %li.listList
+          = link_to "Rider’s Garage", root_path, class: "listList--link"
+          %i.fas.fa-greater-than
+        %li.listList
+          %p.listList--link
+            = @category.parent.name
+          %i.fas.fa-greater-than
+        %li.listList
+          %p.listList--link
+            = @category.name
+      .listGoods
+        - @items.each do |item,i|
+          - if item.images.present?
+            .listGoods__box
+              .listGoods--image
+                %a{:href => item_path(item.id)}
+                  = image_tag (item.images[0].item_image.url), size: "205x230", class: "image-list"
+              .listGoods--details{"data-index" => "#{i}"}
+                %a{:href => item_path(item.id), class: "listGoods--link"}
+                  .text_field
+                    .iName
+                      = "#{item.name}"
+                    .iPrice
+                      = "¥#{item.price}"
     -else
-      .notfind_text 該当商品が見つかりません
-.neck
+      .notice_text 該当商品が見つかりません
+-# -if @items.present?
+-#   .neck
+-# - else
+-#   .another-neck
+
 .footer
   = render "footer-bottom"

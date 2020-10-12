@@ -108,6 +108,11 @@ class ItemsController < ApplicationController
   def list
     @items = Item.where(category_id: params[:category_id])
     @parents = Category.where(ancestry: nil)
+    
+    @item = Item.find_by(category_id: params[:category_id])
+    if @item.present?
+      @category = Category.find(@item.category_id)
+    end
   end
 
   private
