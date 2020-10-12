@@ -1,0 +1,14 @@
+.box
+  %i.fas.fa-list-ul
+  %p.side-category カテゴリから探す
+%ul.category__parent
+  - @parents.each do |parent|
+    .category-box{id: "category#{parent.id}"}
+      %p.parent_category{id: "parent#{parent.id}"}
+        = "#{parent.name}"
+      %i.fas.fa-angle-down
+    %ul.category__child{id: "list#{parent.id}"}
+      - parent.children.each do |child|
+        .category-box{id: "category#{child.id}"}
+          = link_to "#{child.name}", list_items_path(category_id:child.id), class: "parent_category",id: "child#{child.id}"
+          %i.fas.fa-angle-right

@@ -115,6 +115,12 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @items = Item.search(params[:keyword])
+    @keyword = params[:keyword]
+    @parents = Category.where(ancestry: nil)
+  end
+
   private
 
   def item_params

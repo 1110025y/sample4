@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 
-
 .contents__body--side{
   width: 40%;
   height: 100%;
@@ -1298,4 +1297,12 @@
     font-size: 25px;
     margin-top: 25px;
   }
+}
+
+
+.keyword-title{
+  font-size: 25px;
+  font-weight: bold;
+  opacity: 0.6;
+  margin-bottom: 30px;
 }

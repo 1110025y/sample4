@@ -41,7 +41,11 @@ class UsersController < ApplicationController
     @favorites = Favorite.all
   end
 
+  def information
+    
+  end
 
+  
   # private
   # def user_registration_params
   #   params.require(:user).permit(:nickname, :family_name, :first_name, :family_name_kana, :first_name_kana)

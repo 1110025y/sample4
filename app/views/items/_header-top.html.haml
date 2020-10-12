@@ -12,7 +12,7 @@
       %p.logo-text フリマアプリ&サイト Rider’s Garage[ライダースーガレッジ]
   .header--search
     .search-box
-      = form_with(url: "#", local: true, method: :get, class: "search-form") do |f|
+      = form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |f|
         = f.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
         %label{for: "search-icon", class: "search-label"}
           %i.fas.fa-search
@@ -24,7 +24,7 @@
         .bottom-box_notice
           %a{:href => "#", class: "bottom-btn"}
             %i.far.fa-bell#bell
-          = link_to "お知らせ", "#", class: "bottom-box_notice--btn", id: "search"
+          = link_to "お知らせ", information_users_path, class: "bottom-box_notice--btn", id: "search"
         .bottom-box_my-page
           %a{:href => "#", class: "bottom-btn"}
             %i.far.fa-grin-squint#squint

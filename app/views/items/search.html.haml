@@ -1,0 +1,27 @@
+.contents
+  = render "header-top"
+.contents__body
+  .contents__body--side
+    = render "side-category-list"
+    .another-neck
+  .contents__body--list
+    -# keyword-titleのSCSSは、items.list.scssに記載
+    %p.keyword-title 
+      = "#{@keyword} の検索結果"
+    .listGoods
+      - @items.each do |item,i|
+        - if item.images.present?
+          .listGoods__box
+            .listGoods--image
+              %a{:href => item_path(item.id)}
+                = image_tag (item.images[0].item_image.url), size: "205x230", class: "image-list"
+            .listGoods--details{"data-index" => "#{i}"}
+              %a{:href => item_path(item.id), class: "listGoods--link"}
+                .text_field
+                  .iName
+                    = "#{item.name}"
+                  .iPrice
+                    = "¥#{item.price}"
+.contents__box
+.footer
+  = render "footer-bottom"

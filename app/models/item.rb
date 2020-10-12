@@ -14,4 +14,10 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :delivery_fee
   belongs_to_active_hash :status
+
+  def self.search(search)
+    return Item.all unless search
+    Item.where('name LIKE(?)', "%#{search}%")
+  end
+
 end
