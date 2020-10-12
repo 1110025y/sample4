@@ -48,6 +48,7 @@ class ItemsController < ApplicationController
     @user = User.find(@item.user_id)
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
+    
   end
 
   def update
@@ -102,6 +103,16 @@ class ItemsController < ApplicationController
 
     @item.update(buyer_id: current_user.id)
     redirect_to user_path(:id), notice: 'Purchase of the product is completed！'
+  end
+
+  def list
+    @items = Item.where(category_id: params[:category_id])
+    @parents = Category.where(ancestry: nil)
+    
+    @item = Item.find_by(category_id: params[:category_id])
+    if @item.present?
+      @category = Category.find(@item.category_id)
+    end
   end
 
   private
