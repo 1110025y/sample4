@@ -122,8 +122,7 @@ class ItemsController < ApplicationController
   end
 
   def detail_search
-    # @search_item = Item.ransack(params[:q]) 
-    # @items = @search_item.result
+    
   end
 
   private

@@ -78,6 +78,39 @@
       }
     }
   }
+  .detail-status{
+    margin-top: 25px;
+    &--label{
+      display: flex;
+      margin-left: 15px;
+      .fa-paperclip{
+        margin: 3px 5px 0 0;
+      }
+    }
+    &--checkbox{
+      margin-top: 5px;
+      .checkboxes{
+        margin-left: 15px;
+      }
+    }
+  }
+  .detail-deliveryFee{
+    margin-top: 25px;
+    &--label{
+      display: flex;
+      margin-left: 15px;
+      .fa-truck{
+        margin: 3px 5px 0 0;
+      }
+    }
+    &--checkbox{
+      margin-top: 5px;
+      .checkboxes{
+        margin-left: 15px;
+      }
+    }
+  }
+
   .detail-btn{
     margin-top: 20px;
     .sbt-btn{
@@ -86,6 +119,10 @@
       margin: 15px 0 20px 45px;
       border: none;
       border-radius: 10px;
+    }
+    .sbt-btn:hover{
+      opacity: 0.5 ;
+      background-color: #C0C0C0;
     }
   }
 }
