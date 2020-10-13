@@ -2,8 +2,10 @@
   = render "header-top"
 .contents__body
   .contents__body--side
-    = render "side-category-list"
-    .another-neck
+    .category_search
+      = render "side-category_search"
+    .detail_search
+      = render "side-detail_search"
   .contents__body--list
     -if @items.present?
       %p.categoryName

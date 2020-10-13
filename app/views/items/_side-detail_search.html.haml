@@ -1,0 +1,20 @@
+-# SCSSは、side.search.scssに記載
+.title-box
+  %p.title 詳細検索
+.detail_search--box
+  = search_form_for(@q,url: detail_search_items_path) do |f|
+    .detail-keyword
+      .detail-keyword--box
+        %i.fas.fa-plus
+        %p.wd キーワードを追加する
+      = f.search_field :name_cont, placeholder: "例）バイク", class: "detail-keyword--form"
+    .detail-price
+      .detail-price--label
+        %i.fas.fa-coins
+        %p.wd 価格
+      .detail-price--forms
+        = f.number_field :price_gteq, placeholder: "¥300以上", min:300, class: "price-min"
+        %p.wd 〜
+        = f.number_field :price_lteq, placeholder: "¥9999999以下", max:9999999, class: "price-max"
+    .detail-btn
+      = f.submit "検索", class: "sbt-btn"
