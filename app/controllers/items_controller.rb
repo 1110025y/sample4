@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  
+  before_action :set_ransack, only: [:list, :search, :detail_search]
 
   def index
     @items = Item.includes(:images).order('created_at DESC') #トップページに表示、更新した順番で
@@ -115,10 +115,25 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @items = Item.search(params[:keyword])
+    @keyword = params[:keyword]
+    @parents = Category.where(ancestry: nil)
+  end
+
+  def detail_search
+    
+  end
+
   private
 
   def item_params
     params.require(:item).permit(:name, :price, :prefecture_id, :category_id, :shipping_date_id , :delivery_fee_id, :buyer_id, :status_id, :introduction, :brand, images_attributes: [:item_image, :_destroy, :id]).merge(user_id: current_user.id)
+  end
+
+  def set_ransack
+    @q = Item.ransack(params[:q])
+    @items = @q.result(distinct: true)
   end
   
 end

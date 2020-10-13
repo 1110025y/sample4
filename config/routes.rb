@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     collection do
       get 'category/get_category_children', to: 'items#get_category_children', defaults: { format: 'json' }
       get 'list'
+      get 'search'
+      get 'detail_search'
     end
     member do
       get 'purchase'
@@ -28,6 +30,7 @@ Rails.application.routes.draw do
     end
     collection do #idを指定して特定のページにいく必要がない
       get 'setUpShow'
+      get 'information'
     end
   end
 
