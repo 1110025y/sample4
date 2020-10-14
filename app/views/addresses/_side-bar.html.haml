@@ -3,7 +3,8 @@
     .heading
       %p.menu マイページメニュー
     .box
-      %p.box__letter お知らせ
+      = link_to information_users_path , class: "link-btn" do
+        %p.link-letter お知らせ
     .box
       = link_to favoriteGoods_user_path(:id) , class: "link-btn" do
         %p.link-letter いいねした商品

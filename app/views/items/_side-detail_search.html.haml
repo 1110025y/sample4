@@ -13,31 +13,31 @@
         %i.fas.fa-coins
         %p.wd 価格
       .detail-price--forms
-        = f.number_field :price_gteq, placeholder: "¥300以上", min:300, class: "price-min"
+        = f.search_field :price_gteq, placeholder: "¥300以上", min:300, class: "price-min"
         %p.wd 〜
-        = f.number_field :price_lteq, placeholder: "¥9999999以下", max:9999999, class: "price-max"
+        = f.search_field :price_lteq, placeholder: "¥9999999以下", max:9999999, class: "price-max"
     .detail-status
       .detail-status--label
         %i.fas.fa-paperclip
         %p.wd 商品の状態
       .detail-status--checkbox
         .checkboxes
-          = f.check_box :status_id_eq_any, { multiple: true }, 1, 'nil'
+          = f.check_box :status_id_eq_any, { multiple: true }, 1, ''
           = '新品、未使用'
         .checkboxes
-          = f.check_box :status_id_eq_any, { multiple: true }, 2, 'nil'
+          = f.check_box :status_id_eq_any, { multiple: true }, 2, ''
           = '未使用に近い'
         .checkboxes
-          = f.check_box :status_id_eq_any, { multiple: true }, 3, 'nil'
+          = f.check_box :status_id_eq_any, { multiple: true }, 3, ''
           = '目立った傷や汚れなし'
         .checkboxes
-          = f.check_box :status_id_eq_any, { multiple: true }, 4, 'nil'
+          = f.check_box :status_id_eq_any, { multiple: true }, 4, ''
           = 'やや傷や汚れあり'
         .checkboxes
-          = f.check_box :status_id_eq_any, { multiple: true }, 5, 'nil'
+          = f.check_box :status_id_eq_any, { multiple: true }, 5, ''
           = '傷や汚れあり'
         .checkboxes
-          = f.check_box :status_id_eq_any, { multiple: true }, 6, 'nil'
+          = f.check_box :status_id_eq_any, { multiple: true }, 6, ''
           = '全体的に状態が悪い'
     .detail-deliveryFee
       .detail-deliveryFee--label

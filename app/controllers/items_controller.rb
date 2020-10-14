@@ -122,7 +122,8 @@ class ItemsController < ApplicationController
   end
 
   def detail_search
-    
+    @items = @q.result(distinct: true)
+    @parents = Category.where(ancestry: nil)
   end
 
   private
@@ -133,7 +134,6 @@ class ItemsController < ApplicationController
 
   def set_ransack
     @q = Item.ransack(params[:q])
-    @items = @q.result(distinct: true)
   end
   
 end
